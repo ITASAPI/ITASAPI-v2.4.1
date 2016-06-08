@@ -941,7 +941,7 @@ Codes used to describe the units of measurement applied in physical contracts.
 # Group WIP Reference Data
 WIP Ledger related reference data.
 
-## Charter [/RefrenceData/{TradingEntityId}/WIPLedger/	Charter/{CharterId}]
+## Charter [/RefrenceData/{TradingEntityId}/WIPLedger/Charter/{CharterId}]
 Charter profile – restricted by WIPAccountType of `C`.
 ### Read Charter [GET]
 `New` in release 2.4
@@ -1123,8 +1123,8 @@ Charter profile
     [AccessToken][]
     
 + Parameters
-    + WIPAccountId (required, string, `AB`) 
-    + CharterId (required, string, `5100.MEP`)
+    + TradingEntityId (required, string, `AB`) 
+    + WipAccountId (required, string, `5100.MEP`)
 
 + Response 200 (application/json)
     + Attributes (WIPAccount)
