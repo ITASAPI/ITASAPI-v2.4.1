@@ -959,7 +959,7 @@ Charter profile – restricted by WIPAccountType of `C`.
     + CharterId (required, string, `5100.MEP`)
 
 + Response 200 (application/json)
-    + Attributes ()
+    + Attributes (Charter)
 
 + Response 400 (application/json)
     + Attributes (400 Response)
@@ -990,7 +990,7 @@ List of charter profiles – restricted by WIPAccountType of `C`.
     + PropertyValue (optional, string, `abc`) ... required if property specified.
 
 + Response 200 (application/json)
-    + Attributes ()
+    + Attributes (array [Charter List])
     
 + Response 400 (application/json)
     + Attributes (400 BadPropertyResponse)
@@ -1001,7 +1001,7 @@ List of charter profiles – restricted by WIPAccountType of `C`.
 
 
 ## StockUnit [/RefrenceData/{TradingEntityId}/WipLedger/StockUnit/{StockUnitId}]
-Stock Account profile - – restricted by WIPAccountType of `S`.
+Stock Account profile - restricted by WIPAccountType of `S`.
 ### Read StockUnit [GET]
 
 |property|description|type|max length|notes|constraint|
@@ -1096,7 +1096,7 @@ Charter profile
     + CharterId (required, string, `5100.MEP`)
 
 + Response 200 (application/json)
-    + Attributes ()
+    + Attributes (WIPAccount)
 
 + Response 400 (application/json)
     + Attributes (400 Response)
@@ -1127,7 +1127,7 @@ List of charter profiles.
     + PropertyValue (optional, string, `abc`) ... required if property specified.
 
 + Response 200 (application/json)
-    + Attributes ()
+    + Attributes (array[WIPAccount List])
     
 + Response 400 (application/json)
     + Attributes (400 BadPropertyResponse)
