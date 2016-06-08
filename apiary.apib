@@ -941,7 +941,7 @@ Codes used to describe the units of measurement applied in physical contracts.
 # Group WIP Reference Data
 WIP Ledger related reference data.
 
-## Charter [/RefrenceData/{TradingEntityId}/Charter/abc/{CharterId}]
+## Charter [/RefrenceData/{TradingEntityId}/WIPLedger/	Charter/{CharterId}]
 Charter profile – restricted by WIPAccountType of `C`.
 ### Read Charter [GET]
 `New` in release 2.4
@@ -978,24 +978,24 @@ Charter profile – restricted by WIPAccountType of `C`.
     + Attributes (404 Response)
 
 
-## Charter List [/RefrenceData/{TradingEntityId}/Charter/abc/{Property}/{PropertyValue}]
+## Charter List [/RefrenceData/{TradingEntityId}/WipLedger/Charter/{Property}/{PropertyValue}]
 List of charter profiles – restricted by WIPAccountType of `C`.
 ### List Charter [GET]
 `New` in release 2.4
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
-|CharterId|cna50_acc|`string`|11|||
+|CharterId|cna50_acc|`string`|11|Filter||
 |CharterDescription|cna50_descr|`string`|60|||
 |DepartmentCode|cna50_dept|`string`|4|||
 |CommodityCode|phys01_commod, phys01_origin, phys01_grade, phys01_cmycode4, phys01_cmycode5|`string`|50||`Composite Key` delimited by double pipe "&#124;&#124;"|
 |NominalAccountCode|cna50_liqplacc|`string`|9|||
-|ShipmentStatusCode|cna50_afi|`string`|2|||
+|ShipmentStatusCode|cna50_afi|`string`|2|Filter||
 |VesselReference|cna50_vessel|`string`|30|||
 |ShippingLineCode|cna50_shippingline|`string`|10|||
 |PrivilegeLevel|cna50_priv|`number`|||0-9|
-|EDICode|cna50_c2cacc|`string`|9|||
-|Status|cna50_status|`string`|1||`O` or `F`|
+|EDICode|cna50_c2cacc|`string`|9|Filter||
+|Status|cna50_status|`string`|1|Filter|`O` or `F`|
 
 
 + Request
@@ -1064,7 +1064,7 @@ Stock Account profile – restricted by WIPAccountType of `S`.
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
-|StockUnitId|cna50_acc|`string`|11|||
+|StockUnitId|cna50_acc|`string`|11|Filter||
 |StockUnitDescription|cna50_descr|`string`|60|||
 |TerminalCode|cna50_terminal|`string`|4||must exist in xx_cmy21|
 |DepartmentCode|cna50_dept|`string`|4||must exist in xx_cmy102|
@@ -1074,8 +1074,8 @@ Stock Account profile – restricted by WIPAccountType of `S`.
 |ReleaseState|cna50_siemenrel|`number`||||
 |CurrentStatus|cna50_siemenstatus|`number`||||
 |PrivilegeLevel|cna50_priv|`number`|1||0-9|
-|EDICode|cna50_c2cacc|`string`|9|||
-|Status|cna50_status|`string`|1||`O` or `F`|
+|EDICode|cna50_c2cacc|`string`|9|Filter||
+|Status|cna50_status|`string`|1|Filter|`O` or `F`|
 
 + Request
     [AccessToken][]
@@ -1101,7 +1101,7 @@ Stock Account profile – restricted by WIPAccountType of `S`.
 
 
 
-## WIP Account [/RefrenceData/{TradingEntityId}/WipAccount/abc/{WipAccountId}]
+## WIP Account [/RefrenceData/{TradingEntityId}/WipLedger/WipAccount/{WipAccountId}]
 Charter profile
 ### Read WIP Account [GET]
 `New` in release 2.4
@@ -1136,21 +1136,21 @@ Charter profile
     + Attributes (404 Response)
 
 
-## WIP Account List [/RefrenceData/{TradingEntityId}/WIPAccount/abc/{Property}/{PropertyValue}]
+## WIP Account List [/RefrenceData/{TradingEntityId}/WipLedger/WIPAccount/{Property}/{PropertyValue}]
 List of charter profiles.
 ### List WIP Accounts [GET]
 `New` in release 2.4
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
-|WIPAccountId|cna50_acc|`string`|11||required|
+|WIPAccountId|cna50_acc|`string`|11|Filter|required|
 |WIPAccountDescription|cna50_descr|`string`|60||required|
-|WIPAccountType|cna50_acctype|`string`|1|||
+|WIPAccountType|cna50_acctype|`string`|1|Filter||
 |Department||`object`|4|see <a href="/#reference/nominal-reference-data/department/read-department">Department</a> object||
 |NominalAccount||`object`|9|see <a href="/#reference/data-object-definitions/accountheader">AccountHeader</a> object||
 |PrivilegeLevel|cna50_priv|`number`|||0-9|
-|EDICode|cna50_c2cacc|`string`|9|||
-|Status|cna50_status|`string`|1||`O` or `F`|
+|EDICode|cna50_c2cacc|`string`|9|Filter||
+|Status|cna50_status|`string`|1|Filter|`O` or `F`|
 
 
 + Request
@@ -1410,8 +1410,8 @@ List of Principle Physical Contracts (agreements)
 |ClientReference|phys01_clref|`string`|40|||
 |BuyerAccountCode|phys01_buyer|`string`|10|||
 |SellerAccountCode|phys01_seller|`string`|10|||
-|CounterpartyCode|phys01_counterparty|`string`|10|||
-|CommodityCode| phys01_commod, phys01_origin, phys01_grade, phys01_cmycode4, phys01_cmycode5|`string`|50|Filter|`Composite Key` delimited by double pipe "&#124;&#124;"|
+|CounterpartyCode|phys01_counterparty|`string`|10|Filter||
+|CommodityCode| phys01_commod, phys01_origin, phys01_grade, phys01_cmycode4, phys01_cmycode5|`string`|50||`Composite Key` delimited by double pipe "&#124;&#124;"|
 |PaymentTermCode|phys01_payterms|`string`|8|||
 |ContractTermCode|phys01_conterms|`string`|8|||
 |ContractTermPortCode|phys01_contermsport|`string`|8|||
