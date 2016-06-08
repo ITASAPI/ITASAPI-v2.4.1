@@ -340,7 +340,7 @@ Currency codes.
 ## UserAccount List  [/ReferenceData/Global/UserAccount/{Property}/{PropertyValue}]
 ITAS User Account profiles.
 ### List User Accounts [GET]
-`New` in ITAS API V2.3
+
 
 
 |property|description|type|max length|notes|constraint|
@@ -439,7 +439,7 @@ Codes used to segregate business sectors within a trading company, and can be ap
 ## Expense List [/ReferenceData/{TradingEntityId}/NominalLedger/Expense/{Property}/{PropertyValue}]
 Codes that are primarily used for accounting transaction analysis purposes.
 ### List Expenses [GET]
-`New` endpoint in release 2.3
+
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -591,7 +591,7 @@ User-defined categorisation codes that can be applied to departments and bank ac
 ## Vat Rate List [/ReferenceData/{TradingEntityId}/NominalLedger/VATRate/{Property}/{PropertyValue}]
 Codes and rates applied as part of any VAT/GST accounting practise.
 ### List VATRates [GET]
-`New` endpoint in the 2.3 ITAS API relase.
+
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -672,7 +672,7 @@ Commodity/Product codes, used to identify goods.
 ## Contract Term List [/ReferenceData/{TradingEntityId}/Physicals/ContractTerm/{Property}/{PropertyValue}]
 Contract Terms (aka Incoterms) usually setup to represent pre-defined, internationally recognised, commercial terms of contract.
 ### List ContractTerms [GET]
-`New` endpoint in release 2.3
+
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -941,6 +941,62 @@ Codes used to describe the units of measurement applied in physical contracts.
 # Group WIP Reference Data
 WIP Ledger related reference data.
 
+## Charter List [/RefrenceData/{TradingEntityId}/Charter/abc/{Property}/{PropertyValue}]
+List of charter profiles.
+### List Charter [GET]
+`New` in release 2.4
+
+|property|description|type|max length|notes|constraint|
+|--------|-----------|----|----------|-----|----------|
+
++ Request
+    [AccessToken][]
+
++ Parameters
+    + TradingEntityId: AB (required, string) ... identify specific trading entity
+    + Property (optional, enum[string]) ... identify property name to filter by 
+       + Members
+            + CharterIdId (optional, string) 
+            + ShippingStatusCode (optional, string)
+            + EdiCode (optional, string)
+            + Status (optional, string)
+    + PropertyValue (optional, string, `abc`) ... required if property specified.
+
++ Response 200 (application/json)
+    + Attributes ()
+    
++ Response 400 (application/json)
+    + Attributes (400 BadPropertyResponse)
+    
++ Response 404 (application/json)
+    + Attributes (404 Response
+
+## Charter List [/RefrenceData/{TradingEntityId}/Charter/abc/{CharterId}]
+Charter profile
+### Read Charter [GET]
+`New` in release 2.4
+
+
+|property|description|type|max length|notes|constraint|
+|--------|-----------|----|----------|-----|----------|
+
+
++ Request
+    [AccessToken][]
+    
++ Parameters
+    + TradingEntityId (required, string, `AB`) 
+    + CharterId (required, string, `5100.MEP`)
+
++ Response 200 (application/json)
+    + Attributes ()
+
++ Response 400 (application/json)
+    + Attributes (400 Response)
+
++ Response 404 (application/json)
+    + Attributes (404 Response)
+
 ## StockUnit List [/RefrenceData/{TradingEntityId}/WipLedger/StockUnit/{Property}/{PropertyValue}]
 Stock Account profile.
 ### List StockUnits [GET]
@@ -1024,7 +1080,7 @@ Data Objects and endpoints providing access to accounting transactions generated
 ## Posted Transaction [/Accounting/{TradingEntityId}/Transaction/PostedTransaction/{DocRef}]
 Provides access to full accounting ledger by Document Reference.
 ### Read Posted Transaction [GET]
-`New` in release 2.3
+
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -1077,7 +1133,7 @@ Provides access to full accounting ledger by Document Reference.
 ## UnPosted Transaction [/Accounting/{TradingEntityId}/Transaction/UnPostedTransaction/{DocRef}]
 Provides access to financial transaction details yet to be posted to the ledgers (either held-authorised or not authorised) by Document Reference.
 ### Read Unposted Transaction [GET]
-`New` in release 2.3
+
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -1128,7 +1184,7 @@ Provides access to financial transaction details yet to be posted to the ledgers
 ## Transaction Header [/Accounting/{TradingEntityId}/Transaction/TransactionHeader/{DocRef}]
 Document summary information including properties specific to integration requirements.
 ### Update Transaction Header [PUT]
-`New` in release 2.3
+
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -1161,7 +1217,7 @@ Document summary information including properties specific to integration requir
 ## Transaction Header List [/Accounting/{TradingEntityId}/Transaction/TransactionHeader/{Property}/{PropertyValue}]
 Document summary information including properties specific to integration requirements.
 ### List Transaction Headers [GET]
-`New` in release 2.3
+
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -1197,7 +1253,7 @@ Document summary information including properties specific to integration requir
 ## Physical Trade [/Contract/{TradingEntityId}/Physical/PhysicalTrade/{ContractId}]
 Principle Physical Contract (agreement) details
 ### Read Physical Trade  [GET]
-`New` in release 2.3
+
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -1240,7 +1296,7 @@ Principle Physical Contract (agreement) details
 ## Physical Trade List [/Contract/{TradingEntityId}/Physical/PhysicalTrade/{Property}/{PropertyValue}]
 List of Principle Physical Contracts (agreements)
 ### List Physical Trades  [GET]
-`New` in release 2.3
+
 
 |property|description|type|max length|notes|constraint|
 |-------|-----------|----|----------|-----|----------|
@@ -1292,7 +1348,7 @@ List of Principle Physical Contracts (agreements)
 ## Physical Trade Commission [/Contract/{TradingEntityId}/Physical/PhysicalTradeCommission/{ContractId}]
 Broker commissions held against Physical Contracts.
 ### Read Physical Trade Commission [GET]
-`New` in release 2.3
+
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -1319,7 +1375,7 @@ Broker commissions held against Physical Contracts.
 ## Physical Trade Commissions List [/Contract/{TradingEntityId}/Physical/PhysicalTradeCommission/{Property}/{PropertyValue}]
 List of Broker commissions held against Physical Contracts.
 ### List Physical Trade Commissions [GET]
-`New` in release 2.3
+
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -1350,7 +1406,7 @@ List of Broker commissions held against Physical Contracts.
 ## Physical Trade Shipments List [/Contract/{TradingEntityId}/Physical/PhysicalTradeShipment/{Property}/{PropertyValue}]
 List of Logistics information for Physical Contracts.
 ### List Physical Trade Shipment [GET]
-`New` in release 2.3
+
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
