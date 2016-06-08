@@ -4,15 +4,19 @@ VERSION: 2.4
 
 # ITAS API 2.4
 <strong>Release notes</strong> (13th June 2016)
-<div>~ The Apiary menu has been amended to separate Accounting, Contracts & Inventory endpoints.
+
 <div>~ New endpoints added in this release:
 <ul>
-<li><strong>Blah</strong>: </li>
+<li>WIP Reference Data <strong>Charter</strong>: Read Charter profile data.</li>
+<li>WIP Reference Data <strong>Charter List</strong>: List of Charter profiles.</li>
+<li>WIP Reference Data <strong>WIPAccount</strong>: Read Generic Account profile data.</li>
+<li>WIP Reference Data <strong>WIPAccount List</strong>: List of Generic Account profiles.</li>
 </ul>
 </div>
-<div>~ Endpoints updated in this release:
+<div>~ Updated endpoints changed in this release:
 <ul>
-<li><strong>None/strong>: </li>
+<li>WIP Reference Data <strong>StockUnit</strong>: Now restricted by WIPAccountType ‘S’.</li>
+<li>WIP Reference Data <strong>StockUnit List</strong>: Now restricted by WIPAccountType ‘S’.</li>
 </ul>
 </div> 
 <div>** ends ** </div>
@@ -1073,7 +1077,7 @@ Stock Account profile – restricted by WIPAccountType of `S`.
 |StockOwnerCode|cna50_owner|`string`|50||must exist in xx_chr20|
 |ReleaseState|cna50_siemenrel|`number`||||
 |CurrentStatus|cna50_siemenstatus|`number`||||
-|PrivilegeLevel|cna50_priv|`number`|1||0-9|
+|PrivilegeLevel|cna50_priv|`number`|||0-9|
 |EDICode|cna50_c2cacc|`string`|9|filter||
 |Status|cna50_status|`string`|1|filter|`O` or `F`|
 
