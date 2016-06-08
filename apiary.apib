@@ -954,7 +954,7 @@ Charter profile – restricted by WIPAccountType of `C`.
 |Department||`object`||see <a href="/#reference/nominal-reference-data/department/department-list">Department</a> endpoint||
 |Commodity||`object`||see <a href"/#reference/physicals-reference-data/commodities-list">Commodies List</a> endpoint||
 |NominalAccount||`object`||Nominal Account delivered as an <a href="/#reference/data-object-definitions/accountheader">AccountHeader</a> object||
-|ShipmentStatus|cna50_afi|`string`|2||see <a href"/#reference/physicals-reference-data/shippingstatus-list/list-shippingstatuses">ShippingStatus</a> endpoint|
+|ShipmentStatus|cna50_afi|`string`|2|see <a href"/#reference/physicals-reference-data/shippingstatus-list/list-shippingstatuses">ShippingStatus</a> endpoint|~
 |VesselReference|cna50_vessel|`string`|30|||
 |ShippingLine|cna50_shippingline|`string`|10|Shipping Line delivered as an <a href="/#reference/data-object-definitions/accountheader">AccountHeader</a> object||||
 |PrivilegeLevel|cna50_priv|`number`|||0-9|
@@ -966,7 +966,7 @@ Charter profile – restricted by WIPAccountType of `C`.
     
 + Parameters
     + TradingEntityId (required, string, `AB`) 
-    + CharterId (required, string, `5100.MEP`)
+    + CharterId (required, string, `CHART01.000`)
 
 + Response 200 (application/json)
     + Attributes (Charter)
@@ -985,17 +985,17 @@ List of charter profiles – restricted by WIPAccountType of `C`.
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
-|CharterId|cna50_acc|`string`|11|Filter||
+|CharterId|cna50_acc|`string`|11|filter||
 |CharterDescription|cna50_descr|`string`|60|||
 |DepartmentCode|cna50_dept|`string`|4|||
 |CommodityCode|phys01_commod, phys01_origin, phys01_grade, phys01_cmycode4, phys01_cmycode5|`string`|50||`Composite Key` delimited by double pipe "&#124;&#124;"|
 |NominalAccountCode|cna50_liqplacc|`string`|9|||
-|ShipmentStatusCode|cna50_afi|`string`|2|Filter||
+|ShipmentStatusCode|cna50_afi|`string`|2|filter||
 |VesselReference|cna50_vessel|`string`|30|||
 |ShippingLineCode|cna50_shippingline|`string`|10|||
 |PrivilegeLevel|cna50_priv|`number`|||0-9|
-|EDICode|cna50_c2cacc|`string`|9|Filter||
-|Status|cna50_status|`string`|1|Filter|`O` or `F`|
+|EDICode|cna50_c2cacc|`string`|9|filter||
+|Status|cna50_status|`string`|1|filter|`O` or `F`|
 
 
 + Request
@@ -1032,7 +1032,7 @@ Stock Account profile - restricted by WIPAccountType of `S`.
 |StockUnitDescription|cna50_descr|`string`|60|||
 |Terminal||`object`||see <a href="/#reference/physicals-reference-data/terminals-list">Terminals List</a> endpoint||
 |Department||`object`||see <a href="/#reference/nominal-reference-data/department/department-list">Department</a> endpoint||
-|Commodity||`object`||see <a href"/#reference/physicals-reference-data/commodities-list">Commodies List</a> endpoint||
+|Commodity||`object`||see <a href"/#reference/physicals-reference-data/commodities-list">Commodity List</a> endpoint||
 |NominalAccount||`object`||Nominal Account delivered as an <a href="/#reference/data-object-definitions/accountheader">AccountHeader</a> object||
 |StockOwner||`object`||Stock Owner delivered as an <a href="/#reference/data-object-definitions/accountheader">AccountHeader</a> object||
 |ReleaseState|cna50_siemenrel|`number`||||
@@ -1064,7 +1064,7 @@ Stock Account profile – restricted by WIPAccountType of `S`.
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
-|StockUnitId|cna50_acc|`string`|11|Filter||
+|StockUnitId|cna50_acc|`string`|11|filter||
 |StockUnitDescription|cna50_descr|`string`|60|||
 |TerminalCode|cna50_terminal|`string`|4||must exist in xx_cmy21|
 |DepartmentCode|cna50_dept|`string`|4||must exist in xx_cmy102|
@@ -1074,8 +1074,8 @@ Stock Account profile – restricted by WIPAccountType of `S`.
 |ReleaseState|cna50_siemenrel|`number`||||
 |CurrentStatus|cna50_siemenstatus|`number`||||
 |PrivilegeLevel|cna50_priv|`number`|1||0-9|
-|EDICode|cna50_c2cacc|`string`|9|Filter||
-|Status|cna50_status|`string`|1|Filter|`O` or `F`|
+|EDICode|cna50_c2cacc|`string`|9|filter||
+|Status|cna50_status|`string`|1|filter|`O` or `F`|
 
 + Request
     [AccessToken][]
@@ -1111,12 +1111,11 @@ Charter profile
 |WIPAccountId|cna50_acc|`string`|11||required|
 |WIPAccountDescription|cna50_descr|`string`|60||required|
 |WIPAccountType|cna50_acctype|`string`|1|||
-|DepartmentCode|cna50_dept|`string`|4|||
-|NominalAccountCode|cna50_liqplacc|`string`|9|||
+|Department||`object`|4|see <a href="/#reference/nominal-reference-data/department/read-department">Department</a> object||
+|NominalAccount||`object`|9|see <a href="/#reference/data-object-definitions/accountheader">AccountHeader</a> object||
 |PrivilegeLevel|cna50_priv|`number`|||0-9|
 |EDICode|cna50_c2cacc|`string`|9|||
 |Status|cna50_status|`string`|1||`O` or `F`|
-
 
 
 + Request
@@ -1143,14 +1142,15 @@ List of charter profiles.
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
-|WIPAccountId|cna50_acc|`string`|11|Filter|required|
+|WIPAccountId|cna50_acc|`string`|11|filter|required|
 |WIPAccountDescription|cna50_descr|`string`|60||required|
-|WIPAccountType|cna50_acctype|`string`|1|Filter||
-|Department||`object`|4|see <a href="/#reference/nominal-reference-data/department/read-department">Department</a> object||
-|NominalAccount||`object`|9|see <a href="/#reference/data-object-definitions/accountheader">AccountHeader</a> object||
+|WIPAccountType|cna50_acctype|`string`|1|filter||
+|DepartmentCode|cna50_dept|`string`|4|||
+|NominalAccountCode|cna50_liqplacc|`string`|9|||
 |PrivilegeLevel|cna50_priv|`number`|||0-9|
-|EDICode|cna50_c2cacc|`string`|9|Filter||
-|Status|cna50_status|`string`|1|Filter|`O` or `F`|
+|EDICode|cna50_c2cacc|`string`|9|filter||
+|Status|cna50_status|`string`|1|filter|`O` or `F`|
+
 
 
 + Request
@@ -1188,7 +1188,7 @@ Provides access to full accounting ledger by Document Reference.
 |--------|-----------|----|----------|-----|----------|
 |DocumentReference|txx_docref|`string`|9|||
 |AccountLedgerType|txx_acctype|`string`|1|`C`, `N` or `K`||
-|TransactionKey|txx_account, txx_ccy, txx_period, txx_postdate, txx_posttime|`string`|50|Filter|`Composite Key` delimited by double pipe "&#124;&#124;"|
+|TransactionKey|txx_account, txx_ccy, txx_period, txx_postdate, txx_posttime|`string`|50|filter|`Composite Key` delimited by double pipe "&#124;&#124;"|
 |Account||`object`||see <a href="/#reference/data-object-definitions/accountheader">AccountHeader</a> object||
 |DocumentCurrency||`object`||see <a href="/#reference/nominal-reference-data/nominalaccount">Currency</a> endpoint||
 |AccountingPeriod|txx_period|`number`||||
@@ -1402,15 +1402,15 @@ List of Principle Physical Contracts (agreements)
 
 |property|description|type|max length|notes|constraint|
 |-------|-----------|----|----------|-----|----------|
-|ContractId|phys01_contract|`string`|10|Filter|`KEY`|
+|ContractId|phys01_contract|`string`|10|filter|`KEY`|
 |ContractType|phys01_contype|`string`|1||‘P’, ‘S’|
 |ContractDate|phys01_condate|`datetime`||||
-|DepartmentCode|phys01_dept|`string`|4|Filter||
-|TraderCode|phys01_trader|`string`|3|Filter||
+|DepartmentCode|phys01_dept|`string`|4|filter||
+|TraderCode|phys01_trader|`string`|3|filter||
 |ClientReference|phys01_clref|`string`|40|||
 |BuyerAccountCode|phys01_buyer|`string`|10|||
 |SellerAccountCode|phys01_seller|`string`|10|||
-|CounterpartyCode|phys01_counterparty|`string`|10|Filter||
+|CounterpartyCode|phys01_counterparty|`string`|10|filter||
 |CommodityCode| phys01_commod, phys01_origin, phys01_grade, phys01_cmycode4, phys01_cmycode5|`string`|50||`Composite Key` delimited by double pipe "&#124;&#124;"|
 |PaymentTermCode|phys01_payterms|`string`|8|||
 |ContractTermCode|phys01_conterms|`string`|8|||
@@ -1418,8 +1418,8 @@ List of Principle Physical Contracts (agreements)
 |UnitOfMeasurementCode|phys01_wtcode|`string`|4|||
 |OriginalContractQuantity|phys01_origquan|`number`||||
 |CurrentContractQuantity|phys01_conquan|`number`||||
-|ContractStatus|phys01_status|`string`|1|Filter|‘O’, ‘C’, ‘Q’|
-|ContractApproved|phys01_approved|`boolean`|1|Filter||
+|ContractStatus|phys01_status|`string`|1|filter|‘O’, ‘C’, ‘Q’|
+|ContractApproved|phys01_approved|`boolean`|1|filter||
 
 
 
