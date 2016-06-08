@@ -949,7 +949,17 @@ Charter profile – restricted by WIPAccountType of `C`.
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
-
+|CharterId|cna50_acc|`string`|11||required|
+|CharterDescription|cna50_descr|`string`|60||required|
+|Department||`object`||see <a href="/#reference/nominal-reference-data/department/department-list">Department</a> endpoint||
+|Commodity||`object`||see <a href"/#reference/physicals-reference-data/commodities-list">Commodies List</a> endpoint||
+|NominalAccount||`object`||Nominal Account delivered as an <a href="/#reference/data-object-definitions/accountheader">AccountHeader</a> object||
+|ShipmentStatus|cna50_afi|`string`|2||see <a href"/#reference/physicals-reference-data/shippingstatus-list/list-shippingstatuses">ShippingStatus</a> endpoint|
+|VesselReference|cna50_vessel|`string`|30|||
+|ShippingLine|cna50_shippingline|`string`|10|Shipping Line delivered as an <a href="/#reference/data-object-definitions/accountheader">AccountHeader</a> object||||
+|PrivilegeLevel|cna50_priv|`number`|||0-9|
+|EDICode|cna50_c2cacc|`string`|9|||
+|Status|cna50_status|`string`|1||`O` or `F`|
 
 + Request
     [AccessToken][]
@@ -975,6 +985,18 @@ List of charter profiles – restricted by WIPAccountType of `C`.
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
+|CharterId|cna50_acc|`string`|11|||
+|CharterDescription|cna50_descr|`string`|60|||
+|DepartmentCode|cna50_dept|`string`|4|||
+|CommodityCode|phys01_commod, phys01_origin, phys01_grade, phys01_cmycode4, phys01_cmycode5|`string`|50||`Composite Key` delimited by double pipe "&#124;&#124;"|
+|NominalAccountCode|cna50_liqplacc|`string`|9|||
+|ShipmentStatusCode|cna50_afi|`string`|2|||
+|VesselReference|cna50_vessel|`string`|30|||
+|ShippingLineCode|cna50_shippingline|`string`|10|||
+|PrivilegeLevel|cna50_priv|`number`|||0-9|
+|EDICode|cna50_c2cacc|`string`|9|||
+|Status|cna50_status|`string`|1||`O` or `F`|
+
 
 + Request
     [AccessToken][]
