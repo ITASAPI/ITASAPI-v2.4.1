@@ -941,38 +941,8 @@ Codes used to describe the units of measurement applied in physical contracts.
 # Group WIP Reference Data
 WIP Ledger related reference data.
 
-## Charter List [/RefrenceData/{TradingEntityId}/Charter/abc/{Property}/{PropertyValue}]
-List of charter profiles.
-### List Charter [GET]
-`New` in release 2.4
-
-|property|description|type|max length|notes|constraint|
-|--------|-----------|----|----------|-----|----------|
-
-+ Request
-    [AccessToken][]
-
-+ Parameters
-    + TradingEntityId: AB (required, string) ... identify specific trading entity
-    + Property (optional, enum[string]) ... identify property name to filter by 
-       + Members
-            + CharterIdId (optional, string) 
-            + ShippingStatusCode (optional, string)
-            + EdiCode (optional, string)
-            + Status (optional, string)
-    + PropertyValue (optional, string, `abc`) ... required if property specified.
-
-+ Response 200 (application/json)
-    + Attributes ()
-    
-+ Response 400 (application/json)
-    + Attributes (400 BadPropertyResponse)
-    
-+ Response 404 (application/json)
-    + Attributes (404 Response
-
-## Charter List [/RefrenceData/{TradingEntityId}/Charter/abc/{CharterId}]
-Charter profile
+## Charter [/RefrenceData/{TradingEntityId}/Charter/abc/{CharterId}]
+Charter profile – restricted by WIPAccountType of `C`.
 ### Read Charter [GET]
 `New` in release 2.4
 
@@ -997,8 +967,77 @@ Charter profile
 + Response 404 (application/json)
     + Attributes (404 Response)
 
+
+## Charter List [/RefrenceData/{TradingEntityId}/Charter/abc/{Property}/{PropertyValue}]
+List of charter profiles – restricted by WIPAccountType of `C`.
+### List Charter [GET]
+`New` in release 2.4
+
+|property|description|type|max length|notes|constraint|
+|--------|-----------|----|----------|-----|----------|
+
++ Request
+    [AccessToken][]
+
++ Parameters
+    + TradingEntityId: AB (required, string) ... identify specific trading entity
+    + Property (optional, enum[string]) ... identify property name to filter by 
+       + Members
+            + CharterId (optional, string) 
+            + ShippingStatusCode (optional, string)
+            + EdiCode (optional, string)
+            + Status (optional, string)
+    + PropertyValue (optional, string, `abc`) ... required if property specified.
+
++ Response 200 (application/json)
+    + Attributes ()
+    
++ Response 400 (application/json)
+    + Attributes (400 BadPropertyResponse)
+    
++ Response 404 (application/json)
+    + Attributes (404 Response
+
+
+
+## StockUnit [/RefrenceData/{TradingEntityId}/WipLedger/StockUnit/{StockUnitId}]
+Stock Account profile - – restricted by WIPAccountType of `S`.
+### Read StockUnit [GET]
+
+|property|description|type|max length|notes|constraint|
+|--------|-----------|----|----------|-----|----------|
+|StockUnitId|cna50_acc|`string`|11|||
+|StockUnitDescription|cna50_descr|`string`|60|||
+|Terminal||`object`||see <a href="/#reference/physicals-reference-data/terminals-list">Terminals List</a> endpoint||
+|Department||`object`||see <a href="/#reference/nominal-reference-data/department/department-list">Department</a> endpoint||
+|Commodity||`object`||see <a href"/#reference/physicals-reference-data/commodities-list">Commodies List</a> endpoint||
+|NominalAccount||`object`||Nominal Account delivered as an <a href="/#reference/data-object-definitions/accountheader">AccountHeader</a> object||
+|StockOwner||`object`||Stock Owner delivered as an <a href="/#reference/data-object-definitions/accountheader">AccountHeader</a> object||
+|ReleaseState|cna50_siemenrel|`number`||||
+|CurrentStatus|cna50_siemenstatus|`number`||||
+|PrivilegeLevel|cna50_priv|`number`|1||0-9|
+|EDICode|cna50_c2cacc|`string`|9|||
+|Status|cna50_status|`string`|1||`O` or `F`|
+
++ Request
+    [AccessToken][]
+    
++ Parameters
+    + TradingEntityId (required, string, `AB`) 
+    + StockUnitId (required, string, `5100.MEP`)
+
++ Response 200 (application/json)
+    + Attributes (StockUnit)
+
++ Response 400 (application/json)
+    + Attributes (400 Response)
+
++ Response 404 (application/json)
+    + Attributes (404 Response)
+
+
 ## StockUnit List [/RefrenceData/{TradingEntityId}/WipLedger/StockUnit/{Property}/{PropertyValue}]
-Stock Account profile.
+Stock Account profile – restricted by WIPAccountType of `S`.
 ### List StockUnits [GET]
 
 |property|description|type|max length|notes|constraint|
@@ -1038,40 +1077,63 @@ Stock Account profile.
 + Response 404 (application/json)
     + Attributes (404 Response)
 
-## StockUnit [/RefrenceData/{TradingEntityId}/WipLedger/StockUnit/{StockUnitId}]
-Stock Account profile.
-### Read StockUnit [GET]
+
+
+## WIP Account [/RefrenceData/{TradingEntityId}/WipAccount/abc/{WipAccountId}]
+Charter profile
+### Read WIPAccount [GET]
+`New` in release 2.4
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
-|StockUnitId|cna50_acc|`string`|11|||
-|StockUnitDescription|cna50_descr|`string`|60|||
-|Terminal||`object`||see <a href="/#reference/physicals-reference-data/terminals-list">Terminals List</a> endpoint||
-|Department||`object`||see <a href="/#reference/nominal-reference-data/department/department-list">Department</a> endpoint||
-|Commodity||`object`||see <a href"/#reference/physicals-reference-data/commodities-list">Commodies List</a> endpoint||
-|NominalAccount||`object`||Nominal Account delivered as an <a href="/#reference/data-object-definitions/accountheader">AccountHeader</a> object||
-|StockOwner||`object`||Stock Owner delivered as an <a href="/#reference/data-object-definitions/accountheader">AccountHeader</a> object||
-|ReleaseState|cna50_siemenrel|`number`||||
-|CurrentStatus|cna50_siemenstatus|`number`||||
-|PrivilegeLevel|cna50_priv|`number`|1||0-9|
-|EDICode|cna50_c2cacc|`string`|9|||
-|Status|cna50_status|`string`|1||`O` or `F`|
+
 
 + Request
     [AccessToken][]
     
 + Parameters
-    + TradingEntityId (required, string, `AB`) 
-    + StockUnitId (required, string, `5100.MEP`)
+    + WIPAccountId (required, string, `AB`) 
+    + CharterId (required, string, `5100.MEP`)
 
 + Response 200 (application/json)
-    + Attributes (StockUnit)
+    + Attributes ()
 
 + Response 400 (application/json)
     + Attributes (400 Response)
 
 + Response 404 (application/json)
     + Attributes (404 Response)
+
+
+## WIP Account List [/RefrenceData/{TradingEntityId}/WIPAccount/abc/{Property}/{PropertyValue}]
+List of charter profiles.
+### List WIPAccounts [GET]
+`New` in release 2.4
+
+|property|description|type|max length|notes|constraint|
+|--------|-----------|----|----------|-----|----------|
+
++ Request
+    [AccessToken][]
+
++ Parameters
+    + TradingEntityId: AB (required, string) ... identify specific trading entity
+    + Property (optional, enum[string]) ... identify property name to filter by 
+       + Members
+            + WIPAccountId (optional, string) 
+            + WIPAccountType (optional, string)
+            + EdiCode (optional, string)
+            + Status (optional, string)
+    + PropertyValue (optional, string, `abc`) ... required if property specified.
+
++ Response 200 (application/json)
+    + Attributes ()
+    
++ Response 400 (application/json)
+    + Attributes (400 BadPropertyResponse)
+    
++ Response 404 (application/json)
+    + Attributes (404 Response
 
 
 # Group Accounting/Transactions
@@ -2032,6 +2094,12 @@ A multipurpose object used by several endpoints.
 ## 404 ErrorMessageDetail (object)
 + ErrorMessage: `API5067 - API : The value {TradingEntityId} sent as the TradingEntitiyId does not exist.` (string)
 
+## Charter (object)
++ CharterId: 5100.MEP (required, string)
+
+## Charter List (object)
++ CharterId: 5100.MEP (string)
+
 ## ClientAccount (object)
 + ClientAccountId: ABCDEF.P (string) 
 + Title: ACME Trading Company (string)
@@ -2572,6 +2640,12 @@ A multipurpose object used by several endpoints.
 + ConversionFactorToKilos: 2.7905 (number)
 + EdiCode: abc123 (string)
 + Status: F (string)
+
+## WIPAccount (object)
++ WIPAccountId: 5100.MEP (required, string)
+
+## WipAccount List (object)
++ WIPAccountId: 5100.MEP (string)
 
 ## VATRate (object)
 + VatRateId: GS (required, string)
