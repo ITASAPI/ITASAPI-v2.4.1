@@ -1081,19 +1081,19 @@ Stock Account profile – restricted by WIPAccountType of `S`.
 
 ## WIP Account [/RefrenceData/{TradingEntityId}/WipAccount/abc/{WipAccountId}]
 Charter profile
-### Read WIPAccount [GET]
+### Read WIP Account [GET]
 `New` in release 2.4
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
-|WIPAccountId|cna50_acc|`string`|11|||
-|WIPAccountDescription|cna50_descr|`string`|60|||
+|WIPAccountId|cna50_acc|`string`|11||Required|
+|WIPAccountDescription|cna50_descr|`string`|60||Required|
 |WIPAccountType|cna50_acctype|`string`|1|||
 |DepartmentCode|cna50_dept|`string`|4|||
 |NominalAccountCode|cna50_liqplacc|`string`|9|||
-|PrivilegeLevel|cna50_priv|`string`|1|||
+|PrivilegeLevel|cna50_priv|`number`|1||0-9|
 |EDICode|cna50_c2cacc|`string`|9|||
-|Status|cna50_status|`string`|1|||
+|Status|cna50_status|`string`|1||`O` or `F`|
 
 
 
@@ -1116,7 +1116,7 @@ Charter profile
 
 ## WIP Account List [/RefrenceData/{TradingEntityId}/WIPAccount/abc/{Property}/{PropertyValue}]
 List of charter profiles.
-### List WIPAccounts [GET]
+### List WIP Accounts [GET]
 `New` in release 2.4
 
 |property|description|type|max length|notes|constraint|
@@ -1126,9 +1126,9 @@ List of charter profiles.
 |WIPAccountType|cna50_acctype|`string`|1|||
 |Department||`object`|4|see <a href="/#reference/nominal-reference-data/department/read-department">Department</a> object||
 |NominalAccount||`object`|9|see <a href="/#reference/data-object-definitions/accountheader">AccountHeader</a> object||
-|PrivilegeLevel|cna50_priv|`string`|1|||
+|PrivilegeLevel|cna50_priv|`number`|1||0-9|
 |EDICode|cna50_c2cacc|`string`|9|||
-|Status|cna50_status|`string`|1|||
+|Status|cna50_status|`string`|1||`O` or `F`|
 
 
 + Request
@@ -2665,7 +2665,7 @@ A multipurpose object used by several endpoints.
 + WIPAccountType: M (string)
 + Department (Department)
 + NominalAccountCode (AccountHeaderN)
-+ PrivilegeLevel: 5 (string)
++ PrivilegeLevel: 5 (number)
 + EDICode: 123xyz (string)
 + Status: F (string)
 
@@ -2676,7 +2676,7 @@ A multipurpose object used by several endpoints.
 + WIPAccountType: M (string)
 + DepartmentCode: 5100 (string)
 + NominalAccountCode: 5100.5100 (string)
-+ PrivilegeLevel: 5 (string)
++ PrivilegeLevel: 5 (number)
 + EDICode: 123xyz (string)
 + Status: F (string)
 
