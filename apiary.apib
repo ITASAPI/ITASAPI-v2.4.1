@@ -1086,6 +1086,15 @@ Charter profile
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
+|WIPAccountId|cna50_acc|`string`|11|||
+|WIPAccountDescription|cna50_descr|`string`|60|||
+|WIPAccountType|cna50_acctype|`string`|1|||
+|DepartmentCode|cna50_dept|`string`|4|||
+|NominalAccountCode|cna50_liqplacc|`string`|9|||
+|PrivilegeLevel|cna50_priv|`string`|1|||
+|EDICode|cna50_c2cacc|`string`|9|||
+|Status|cna50_status|`string`|1|||
+
 
 
 + Request
@@ -1112,6 +1121,15 @@ List of charter profiles.
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
+|WIPAccountId|cna50_acc|`string`|11|||
+|WIPAccountDescription|cna50_descr|`string`|60|||
+|WIPAccountType|cna50_acctype|`string`|1|||
+|Department||`object`|4|see <a href="/#reference/nominal-reference-data/department/read-department">Department</a> object||
+|NominalAccount||`object`|9|see <a href="/#reference/data-object-definitions/accountheader">AccountHeader</a> object||
+|PrivilegeLevel|cna50_priv|`string`|1|||
+|EDICode|cna50_c2cacc|`string`|9|||
+|Status|cna50_status|`string`|1|||
+
 
 + Request
     [AccessToken][]
@@ -2643,7 +2661,7 @@ A multipurpose object used by several endpoints.
 
 ## WIPAccount (object)
 + WIPAccountId: 5100.MEP (required, string)
-+ WIPAccountDescription: `MEPACCRUE - East Africa Dept` (string)
++ WIPAccountDescription: `MEPACCRUE - East Africa Dept` (required, string)
 + WIPAccountType: M (string)
 + Department (Department)
 + NominalAccountCode (AccountHeaderN)
@@ -2657,7 +2675,7 @@ A multipurpose object used by several endpoints.
 + WIPAccountDescription: `MEPACCRUE - East Africa Dept` (string)
 + WIPAccountType: M (string)
 + DepartmentCode: 5100 (string)
-+ NominalAccount: 5100.5100 (string)
++ NominalAccountCode: 5100.5100 (string)
 + PrivilegeLevel: 5 (string)
 + EDICode: 123xyz (string)
 + Status: F (string)
