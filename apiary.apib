@@ -11,6 +11,11 @@ VERSION: 2.4
 <li>WIP Reference Data <strong>Charter List</strong>: List of Charter profiles.</li>
 <li>WIP Reference Data <strong>WIPAccount</strong>: Read Generic Account profile data.</li>
 <li>WIP Reference Data <strong>WIPAccount List</strong>: List of Generic Account profiles.</li>
+<li>Cash <strong>AuthoriseForPosting</strong>: Authorise an entity to be added to the Posting process.</li>
+<li>Cash <strong>PayableManual</strong>: Allows generic cash payments to be created .</li>
+<li>Cash <strong>PayableOnAccount </strong>: Allows cash payments to be created on account.</li>
+<li>Cash <strong>ReceivableManual </strong>: Allows generic cash receipts to be created.</li>
+<li>Cash <strong>ReceivableOnAccount </strong>: Allows cash receipts to be created on account.</li>
 <li>Stock Processing <strong>MarkOrderAsPeocessed</strong>: Call to complete an order.</li>
 </ul>
 </div>
@@ -1622,7 +1627,6 @@ Allows cash payments to be created on account of existing (posted) accounting do
 |OtherCosts||[array] of `object`||see <a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a> object||
 
 
-
 + Parameters
     + TradingEntityId (required, string, `AB`) 
 
@@ -1631,7 +1635,7 @@ Allows cash payments to be created on account of existing (posted) accounting do
 
             AccessToken: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
 
-    + Attributes (PayableOnAccount)
+    + Attributes (PayableReceivableOnAccount)
 
 + Response 200 (application/json)
     + Attributes (200 CreateResponse)
@@ -1676,6 +1680,10 @@ Allows cash receipts to be created on account of existing (posted) accounting do
 ### Create ReceivableOnAccount [POST]
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
+|DocumentBody||`object`||see <a href="/#reference/data-object-definitions/documentdetails/documentdetails">Document Details</a> object|`required`|
+|BankDetails||`object`||see <a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a> object|`required`|
+|TransactionsToMatch||[array] of `object`||see <a href="/#reference/data-object-definitions/onaccountdetails/onaccountdetails">On Account Details</a> object|`required`|
+|OtherCosts||[array] of `object`||see <a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a> object||
 
 
 + Parameters
@@ -1686,7 +1694,7 @@ Allows cash receipts to be created on account of existing (posted) accounting do
 
             AccessToken: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
 
-    + Attributes ()
+    + Attributes (PayableReceivableOnAccount)
 
 + Response 200 (application/json)
     + Attributes (200 CreateResponse)
@@ -2689,7 +2697,7 @@ A multipurpose object used by several endpoints.
 + DocumentBody (required, DocumentDetails)
 + AccountDetails (required, array [AccountPostingDetails])
 
-## PayableOnAccount (object)
+## PayableReceivableOnAccount (object)
 + DocumentBody (required, DocumentDetails)
 + BankDetails (required, AccountPostingDetails)
 + TransactionsToMatch (required, array [OnAccountDetails])
