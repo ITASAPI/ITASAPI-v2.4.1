@@ -2046,11 +2046,11 @@ The account header object is derived from multiple locations of the database dep
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
-|AccountCode|dhlxx_account|`string`|11|required|xx_chr20|
+|AccountCode|dhlxx_account|`string`|11|required|must exist in `xx_chr20`|
 |AccountLedgerType|dhlxx_ledger|`string`|1|required|`C`, `N`, `K`|
-|ExpenseCode|dhlxx_expcode|`string`|7|required|xx_cmy101|
-|DepartmentCode|dhlxx_dept|`string`|4|required|xx_cmy102|
-|AmountInDocumentCurrency|dhlxx_amount|`number`||required||
+|ExpenseCode|dhlxx_expcode|`string`|7|required|must exist in `xx_cmy101`|
+|DepartmentCode|dhlxx_dept|`string`|4|required|must exist in `xx_cmy102`|
+|AmountInDocumentCurrency|dhlxx_amount|`decimal`||required|can contain negative values|
 
 
 + Response 200 (application/json)
@@ -2097,10 +2097,10 @@ A multipurpose object used by several endpoints.
 |--------|-----------|----|----------|-----|----------|
 |DocumentDate|dhl21_ddate|`datetime`||required||
 |ValueDate|dhl21_vdate|`datetime`||required||
-|DocumentCurrencyCode|dhl21_ccy|`string`||required|must exist in `gf_fxr20`|
-|PayeeName|dhl21_payer|`string`||||
-|Narrative|dhl21_narr|`string`||||
-|EDICode|xtx01_axdocref|`string`||||
+|DocumentCurrencyCode|dhl21_ccy|`string`|3|required|must exist in `gf_fxr20`|
+|PayeeName|dhl21_payer|`string`|60|||
+|Narrative|dhl21_narr|`string`|30|||
+|EDICode|xtx01_axdocref|`string`|25|||
 
 
 + Response 200 (application/json)
@@ -2114,7 +2114,7 @@ A multipurpose object used by several endpoints.
 |--------|-----------|----|----------|-----|----------|
 |TransactionKey||`object`||see <a href="/#reference/accounting/transactions/posted-transaction/read-posted-transaction">PostedTransaction</a> object|required|
 |DocumentReference||`object`||see <a href="/#reference/data-object-definitions/addresscountry/#reference/accounting/transactions/posted-transaction/read-posted-transaction">PostedTransaction</a> object|required|
-|TransactionAmountInDocumentCurrency|txx_amt|`decimal`||this value can contain both positive and negative values|required|
+|TransactionAmountInDocumentCurrency|txx_amt|`decimal`||can containegative values|required|
 
 + Response 200 (application/json)
 + Attributes (OnAccountDetails)
