@@ -1543,6 +1543,50 @@ List of Logistics information for Physical Contracts.
 + Response 404 (application/json)
     + Attributes (404 Response)
 
+# Group Finance/Cash
+Data Objects and endpoints providing access to cash create, match and authorisation functionality.
+
+## AuthoriseForPosting [/Finance/{TradingEntityId}/Cash/AuthoriseForPosting/{DocumentReference}]
+
+### Create AuthoriseForPosting [PUT]
+|property|description|type|max length|notes|constraint|
+|--------|-----------|----|----------|-----|----------|
+
+
++ Parameters
+    + TradingEntityId (required, string, `AB`) 
+    + DocumentReference (required, string, `abc123`)
+
++ Request (application/json)
+    + Header
+
+            AccessToken: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
+
+    + Attributes ()
+
++ Response 200 (application/json)
+    + Attributes (200 Created)
+
++ Response 400 (application/json)
+    + Attributes (400 Response)
+
++ Response 404 (application/json)
+    + Attributes (404 Response)
+
+## PayableManual [/Finance/{TradingEntityId}/Cash/PayableManual]
+
+
+## PayableOnAccount [/Finance/{TradingEntityId}/Cash/PayableOnAccount]
+
+
+
+## ReceivableManual [/Finance/{TradingEntityId}/Cash/ReceivableManual]
+
+
+
+## ReceivableOnAccount [/Finance/{TradingEntityId}/Cash/ReceivableOnAccount]
+
+
 
 # Group Inventory/Physicals/Order Scheduling
 Production Order scheduling services.
@@ -1569,6 +1613,9 @@ Orders (CallOffs) specifically representing incoming goods.
 
 + Response 200 (application/json)
     + Attributes (DeliveryInOrder)
+
++ Response 400 (application/json)
+    + Attributes (400 Response)
 
 + Response 404 (application/json)
     + Attributes (404 Response)
