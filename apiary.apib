@@ -2312,12 +2312,24 @@ A multipurpose object used by several endpoints.
 + Response 200 (application/json)
 + Attributes (DocumentDetails)
 
-## TransactionKey [/TransactionKey]
+## OnAccountDetails [/OnAccountDetails]
+
+### OnAccountDetails[GET]
+`New` in release 2.4
+
+|property|description|type|max length|notes|constraint|
+|--------|-----------|----|----------|-----|----------|
+|TransactionKey||`object`||see below|required|
+|DocumentReference||`string`|9||required|
+|TransactionAmountInDocumentCurrency|txx_amt|`decimal`||can containegative values|required|
+
+
+<stong>TransactionKey</strong>
 The Transaction key is a five part key made up of the following values seperate by a double pipe `&#124;&#124;`
 <br />For example `00040444.P||GBP||20150832||20151003||14576460`.
 <br />The  maximum length of any Trnasaciotn key is 
 
-### TransactionKey 
+
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
 ||txx_account|`string`|11||required|
@@ -2326,17 +2338,6 @@ The Transaction key is a five part key made up of the following values seperate 
 ||txx_postdate|`number`|0||required|
 ||txx_posttime|`number`|0||required|
 
-
-## OnAccountDetails [/OnAccountDetails]
-
-### OnAccountDetails[GET]
-`New` in release 2.4
-
-|property|description|type|max length|notes|constraint|
-|--------|-----------|----|----------|-----|----------|
-|TransactionKey||`object`||see <a href="/#reference/accounting/transactions/posted-transaction/read-posted-transaction">PostedTransaction</a> object|required|
-|DocumentReference||`object`||see <a href="/#reference/data-object-definitions/addresscountry/#reference/accounting/transactions/posted-transaction/read-posted-transaction">PostedTransaction</a> object|required|
-|TransactionAmountInDocumentCurrency|txx_amt|`decimal`||can containegative values|required|
 
 + Response 200 (application/json)
 + Attributes (OnAccountDetails)
