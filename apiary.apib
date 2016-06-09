@@ -2704,7 +2704,7 @@ A multipurpose object used by several endpoints.
 ## PayableReceivableOnAccount (object)
 + DocumentBody (required, DocumentDetails)
 + BankDetails (required, AccountPostingDetails)
-+ TransactionsToMatch (required, array [OnAccountDetails])
++ TransactionsToMatch (required, array [TransactionKey])
 + OtherCosts (required, array [AccountPostingDetails])
 
 ## PaymentTerm (object)
@@ -2789,7 +2789,7 @@ A multipurpose object used by several endpoints.
 ## PostedTransaction (object)
 + DocumentReference: 3DIECHES.P (string)
 + AccountLedgerType: C (string)
-+ TransactionKey: `ORG||S1-45||FAIRT||QWE||RTY` (string)
++ TransactionKey: `00040444.P||GBP||20150832||20151003||14576460` (string)
 + AccountCode (AccountHeader)
 + DocumentCurrency (Currency)
 + AccountingPeriod: 20150832 (number)
@@ -2942,6 +2942,9 @@ A multipurpose object used by several endpoints.
 + InterfaceStatus: y (string)
 + PostedDate: 20160101 (number)
 + DocumentDate: 20160101 (number)
+
+## TransactionKey (object)
++ TransactionKey: `00040444.P||GBP||20150832||20151003||14576460` (string)
 
 ## UnPostedTransaction (object)
 + DocumentReference: CN1600001 (string)
