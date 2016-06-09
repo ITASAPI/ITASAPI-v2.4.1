@@ -2312,6 +2312,21 @@ A multipurpose object used by several endpoints.
 + Response 200 (application/json)
 + Attributes (DocumentDetails)
 
+## TransactionKey [/TransactionKey]
+The Transaction key is a five part key made up of the following values seperate by a double pipe `&#124;&#124;`
+<br />For example `00040444.P||GBP||20150832||20151003||14576460`.
+<br />The  maximum length of any Trnasaciotn key is 
+
+### TransactionKey 
+|property|description|type|max length|notes|constraint|
+|--------|-----------|----|----------|-----|----------|
+||txx_account|`string`|11||required|
+||txx_ccy|`string`|3||required|
+||txx_period|`number`|0||required|
+||txx_postdate|`number`|0||required|
+||txx_posttime|`number`|0||required|
+
+
 ## OnAccountDetails [/OnAccountDetails]
 
 ### OnAccountDetails[GET]
@@ -2687,8 +2702,8 @@ A multipurpose object used by several endpoints.
 + NominalGroup: AFGroup (string)
 
 ## OnAccountDetails (object)
-+ TransactionKey (required, PostedTransaction)
-+ DocumentReference (required, PostedTransaction)
++ TransactionKey: 00040444.P||GBP||20150832||20151003||14576460 (required, string)
++ DocumentReference: 3DIECHES.P (required, string)
 + TransactionAmountInDocumentCurrency: `-123.45` (required, number)
 
 ## PackingType (object)
@@ -2704,7 +2719,7 @@ A multipurpose object used by several endpoints.
 ## PayableReceivableOnAccount (object)
 + DocumentBody (required, DocumentDetails)
 + BankDetails (required, AccountPostingDetails)
-+ TransactionsToMatch (required, array [TransactionKey])
++ TransactionsToMatch (required, array [OnAccountDetails])
 + OtherCosts (required, array [AccountPostingDetails])
 
 ## PaymentTerm (object)
@@ -2943,8 +2958,6 @@ A multipurpose object used by several endpoints.
 + PostedDate: 20160101 (number)
 + DocumentDate: 20160101 (number)
 
-## TransactionKey (object)
-+ TransactionKey: `00040444.P||GBP||20150832||20151003||14576460` (string)
 
 ## UnPostedTransaction (object)
 + DocumentReference: CN1600001 (string)
