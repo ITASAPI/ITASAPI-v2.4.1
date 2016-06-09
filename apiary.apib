@@ -11,6 +11,7 @@ VERSION: 2.4
 <li>WIP Reference Data <strong>Charter List</strong>: List of Charter profiles.</li>
 <li>WIP Reference Data <strong>WIPAccount</strong>: Read Generic Account profile data.</li>
 <li>WIP Reference Data <strong>WIPAccount List</strong>: List of Generic Account profiles.</li>
+<li>Stock Processing <strong>MarkOrderAsPeocessed</strong>: Call to complete an order.</li>
 </ul>
 </div>
 <div>~ Updated endpoints changed in this release:
@@ -1820,6 +1821,13 @@ Trigger call to complete an order (e.g. create stock journals etc)
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
 |ReleaseId|phys09_releasenr|`number`|||Unique Key|
+
++ Request
+    [AccessToken][]
+
++ Parameters
+    + TradingEntityId (required, string, `AB`) 
+    + ReleaseId (required, number, `123`)
 
 + Response 200 (application/json)
     + Attributes (200 CreateResponse)
