@@ -2040,6 +2040,16 @@ The account header object is derived from multiple locations of the database dep
 + Response 200 (application/json)
 + Attributes (AccountHeader)
 
+## AccountPostingDetails [/AccountPostingDetails]
+
+### AccountPostinggit basDetails[GET]
+
+|property|description|type|max length|notes|constraint|
+|--------|-----------|----|----------|-----|----------|
+
+
++ Response 200 (application/json)
++ Attributes (AccountPostingDetails)
 
 ## Address [/Address]
 A multipurpose object used by several endpoints. 
@@ -2074,9 +2084,60 @@ A multipurpose object used by several endpoints.
 + Response 200 (application/json)
 + Attributes (Country)
 
+## DocumentDetails [/DocumentDetails]
+
+### DocumentDetails[GET]
+
+|property|description|type|max length|notes|constraint|
+|--------|-----------|----|----------|-----|----------|
+
+
++ Response 200 (application/json)
++ Attributes (DocumentDetails)
+
+## OnAccountDetails [/OnAccountDetails]
+
+### OnAccountDetails[GET]
+
+|property|description|type|max length|notes|constraint|
+|--------|-----------|----|----------|-----|----------|
+
+
++ Response 200 (application/json)
++ Attributes (OnAccountDetails)
 
 
 # Data Structures
+
+## 200 CreateResponse (object)
++ Response: Created (string)
++ PropertyKeyName: PropertyValue (string)
+
+## 201 UpdateResponse (object)
++ Response: Updated (string)
++ PropertyKeyName: PropertyValue (string)
+
+## 400 Response (object)
++ Response: 400 Bad Request (string)
++ Errors (array[400 ErrorMessageDetail])
+
+## 400 BadPropertyResponse (object)
++ Response: 400 Bad Request (string)
++ Errors (array[400 BadPropertyErrorMessageDetail])
+
+## 400 ErrorMessageDetail (object)
++ ErrorMessage: `API5058 - Data : The mandatory field {fieldName} was missing in the request body.` (string)
+
+## 400 BadPropertyErrorMessageDetail (object)
++ ErrorMessage: `API5068 - API : The value sent in the querystring variable {Property} is not allowed.` (string)
+
+## 404 Response (object)
++ Response: 404 Object not found (string)
++ Errors (array[404 ErrorMessageDetail])
+
+## 404 ErrorMessageDetail (object)
++ ErrorMessage: `API5067 - API : The value {TradingEntityId} sent as the TradingEntitiyId does not exist.` (string)
+
 
 ## accessToken (object)
 + Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg 
@@ -2109,34 +2170,8 @@ A multipurpose object used by several endpoints.
 + EDICode: 1234 (string)
 + Status: O (string)
 
-## 200 CreateResponse (object)
-+ Response: Created (string)
-+ PropertyKeyName: PropertyValue (string)
-
-## 201 UpdateResponse (object)
-+ Response: Updated (string)
-+ PropertyKeyName: PropertyValue (string)
-
-## 400 Response (object)
-+ Response: 400 Bad Request (string)
-+ Errors (array[400 ErrorMessageDetail])
-
-## 400 BadPropertyResponse (object)
-+ Response: 400 Bad Request (string)
-+ Errors (array[400 BadPropertyErrorMessageDetail])
-
-## 400 ErrorMessageDetail (object)
-+ ErrorMessage: `API5058 - Data : The mandatory field {fieldName} was missing in the request body.` (string)
-
-## 400 BadPropertyErrorMessageDetail (object)
-+ ErrorMessage: `API5068 - API : The value sent in the querystring variable {Property} is not allowed.` (string)
-
-## 404 Response (object)
-+ Response: 404 Object not found (string)
-+ Errors (array[404 ErrorMessageDetail])
-
-## 404 ErrorMessageDetail (object)
-+ ErrorMessage: `API5067 - API : The value {TradingEntityId} sent as the TradingEntitiyId does not exist.` (string)
+## AccountPostingDetails (object)
++ AccountCode: a (string)
 
 ## Charter (object)
 + CharterId: CHART01.000 (required, string)
@@ -2332,6 +2367,9 @@ A multipurpose object used by several endpoints.
 + EDICode: 1234 (string)
 + Status: F (string)
 
+## DocumentDetails (object)
++ DocumentData: 20160606 (string)
+
 ## Expense List (object)
 + ExpenseId: 1COES (string)
 + ExpenseDescription: Contingency and Escalation (string)
@@ -2416,6 +2454,11 @@ A multipurpose object used by several endpoints.
 + NominalCategoryId: AF (string)
 + NominalCatagoryDescription : Africa Tradeflow (string)
 + NominalGroup: AFGroup (string)
+
+## OnAccountDetails (object)
++ TransactionKey (PostedTransaction)
++ DocumentReference (PostedTransaction)
++ TransactionAmountInDocumentCurrency -123 (string)
 
 ## PackingType (object)
 + PackingTypeId: 1050 (string)
