@@ -2042,10 +2042,15 @@ The account header object is derived from multiple locations of the database dep
 
 ## AccountPostingDetails [/AccountPostingDetails]
 
-### AccountPostinggit basDetails[GET]
+### AccountPostingDetails[GET]
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
+|AccountCode|dhlxx_account|`string`|11||xx_chr20|
+|AccountLedgerType|dhlxx_ledger|`string`|1||`C`, `N`, `K`|
+|ExpenseCode|dhlxx_expcode|`string`|7||xx_cmy101|
+|DepartmentCode|dhlxx_dept|`string`|4||xx_cmy102|
+|AmountInDocumentCurrency|dhlxx_amount|`number`||||
 
 
 + Response 200 (application/json)
@@ -2090,6 +2095,12 @@ A multipurpose object used by several endpoints.
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
+|DocumentDate|dhl21_ddate|`datetime`||required||
+|ValueDate|dhl21_vdate|`datetime`||required||
+|DocumentCurrencyCode|dhl21_ccy|`string`||required|must exist in `gf_fxr20`|
+|PayeeName|dhl21_payer|`string`||||
+|Narrative|dhl21_narr|`string`||||
+|EDICode|xtx01_axdocref|`string`||||
 
 
 + Response 200 (application/json)
@@ -2101,7 +2112,9 @@ A multipurpose object used by several endpoints.
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
-
+|TransactionKey||`object`||see <a href="/#reference/accounting/transactions/posted-transaction/read-posted-transaction">PostedTransaction</a> object||
+|DocumentReference||`object`||see <a href="/#reference/data-object-definitions/addresscountry/#reference/accounting/transactions/posted-transaction/read-posted-transaction">PostedTransaction</a> object||
+|TransactionAmountInDocumentCurrency|txx_amt|`decimal`||this value can contain both positive and negative values||
 
 + Response 200 (application/json)
 + Attributes (OnAccountDetails)
@@ -2171,7 +2184,12 @@ A multipurpose object used by several endpoints.
 + Status: O (string)
 
 ## AccountPostingDetails (object)
-+ AccountCode: a (string)
++ AccountCode: AGUACHEM.P (string)
++ AccountLedgerType: C (string)
++ ExpenseCode: CASHOUT (string)
++ DepartmentCode: BRL (string)
++ AmountInDocumentCurrency: -4615.68 (string)
+
 
 ## Charter (object)
 + CharterId: CHART01.000 (required, string)
