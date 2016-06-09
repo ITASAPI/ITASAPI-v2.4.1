@@ -1590,7 +1590,7 @@ Allows generic cash payments to be created between multiple accounts
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
 |DocumentBody||`object`||see <a href="/#reference/data-object-definitions/documentdetails/documentdetails">Document Details</a> object|`required`|
-|AccountDetails||[array] of `object`||see <a href="/#reference/data-object-definitions/documentdetails/accountpostingdetails">Account Posting Details</a> object|`required`|
+|AccountDetails||[array] of `object`||see <a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a> object|`required`|
 
 
 + Parameters
@@ -1618,9 +1618,9 @@ Allows cash payments to be created on account of existing (posted) accounting do
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
 |DocumentBody||`object`||see <a href="/#reference/data-object-definitions/documentdetails/documentdetails">Document Details</a> object|`required`|
-|BankDetails||`object`||see <a href="/#reference/data-object-definitions/documentdetails/accountpostingdetails">Account Posting Details</a> object|`required`|
+|BankDetails||`object`||see <a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a> object|`required`|
 |TransactionsToMatch||[array] of `object`||see <a href="/#reference/data-object-definitions/onaccountdetails/onaccountdetails">On Account Details</a> object|`required`|
-|OtherCosts||[array] of `object`||see <a href="/#reference/data-object-definitions/documentdetails/accountpostingdetails">Account Posting Details</a> object||
+|OtherCosts||[array] of `object`||see <a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a> object||
 
 
 
