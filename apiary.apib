@@ -1813,10 +1813,22 @@ Batch record information by Stock Unit.
 Production Order processing services.
 
 ## MarkOrderAsProcessed [/Inventory/{TradingEntityId}/Physicals/OrderProcessing/MarkOrderAsProcessed/{ReleaseId}]
-`TBD`
-### Update MarkOrderAsProcessed [GET]
+Trigger call to complete an order (e.g. create stock journals etc)
+### Update MarkOrderAsProcessed [PUT]
+`New` in release 2.4
+
+|property|description|type|max length|notes|constraint|
+|--------|-----------|----|----------|-----|----------|
+|ReleaseId|phys09_releasenr|`number`|||Unique Key|
 
 + Response 200 (application/json)
+	+ ReleaseId (200 CreateResponse)
+
++ Response 400 (application/json)
+    + Attributes (400 Response)
+    
++ Response 404 (application/json)
+    + Attributes (404 Response)
 
 ## StockLoading [/Inventory/{TradingEntityId}/Physicals/OrderProcessing/StockLoading/{ReleaseId}]
 Information specific to the source of the goods generated during any movement (Delivery Out or Stock to Stock).
@@ -2043,6 +2055,7 @@ The account header object is derived from multiple locations of the database dep
 ## AccountPostingDetails [/AccountPostingDetails]
 
 ### AccountPostingDetails[GET]
+`New` in release 2.4
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -2092,6 +2105,7 @@ A multipurpose object used by several endpoints.
 ## DocumentDetails [/DocumentDetails]
 
 ### DocumentDetails[GET]
+`New` in release 2.4
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -2109,6 +2123,7 @@ A multipurpose object used by several endpoints.
 ## OnAccountDetails [/OnAccountDetails]
 
 ### OnAccountDetails[GET]
+`New` in release 2.4
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
