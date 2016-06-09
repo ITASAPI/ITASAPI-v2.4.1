@@ -1592,7 +1592,6 @@ Allows generic cash payments to be created between multiple accounts
 |DocumentBody||`object`||see <a href="/#reference/data-object-definitions/documentdetails/documentdetails">Document Details</a> object|`required`|
 |AccountDetails||[array] of `object`||see <a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a> object|`required`|
 
-
 + Parameters
     + TradingEntityId (required, string, `AB`) 
 
@@ -1601,7 +1600,7 @@ Allows generic cash payments to be created between multiple accounts
 
             AccessToken: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
 
-    + Attributes (PayableManual)
+    + Attributes (PayableReceivableManual)
 
 + Response 200 (application/json)
     + Attributes (200 CreateResponse)
@@ -1649,7 +1648,8 @@ Allows generic cash receipts to be created between multiple accounts
 ### Create ReceivableManual [POST]
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
-
+|DocumentBody||`object`||see <a href="/#reference/data-object-definitions/documentdetails/documentdetails">Document Details</a> object|`required`|
+|AccountDetails||[array] of `object`||see <a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a> object|`required`|
 
 + Parameters
     + TradingEntityId (required, string, `AB`) 
@@ -1659,7 +1659,7 @@ Allows generic cash receipts to be created between multiple accounts
 
             AccessToken: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
 
-    + Attributes ()
+    + Attributes (PayableReceivableManual)
 
 + Response 200 (application/json)
     + Attributes (200 CreateResponse)
@@ -2685,7 +2685,7 @@ A multipurpose object used by several endpoints.
 + EDICode: ext12345678 (string) 
 + Status: F (string)
 
-## PayableManual (object)
+## PayableReceivableManual (object)
 + DocumentBody (required, DocumentDetails)
 + AccountDetails (required, array [AccountPostingDetails])
 
