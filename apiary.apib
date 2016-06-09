@@ -1551,6 +1551,9 @@ Authorise an entity to be added to the Posting process.
 ### Create AuthoriseForPosting [PUT]
 <strong>URI Parameters</strong>
 <br />
+
+
+
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
 |DocumentReference|dhl21_docref|`string`|9|`required'||
@@ -1569,9 +1572,10 @@ None.
             AccessToken: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
 
     + Body 
-    {
-      none.
-    }
+    
+            {
+                none
+            }
 
 + Response 200 (application/json)
     + Attributes (200 CreateResponse)
