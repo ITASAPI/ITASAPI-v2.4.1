@@ -1084,7 +1084,7 @@ Stock Account profile – restricted by WIPAccountType of `S`.
 |DepartmentCode|cna50_dept|`string`|4||must exist in xx_cmy102|
 |CommodityCode|phys01_commod, phys01_origin, phys01_grade, phys01_cmycode4, phys01_cmycode5|`string`|50||`Composite Key` delimited by double pipe "&#124;&#124;"|
 |NominalAccountCode|cna50_liqplacc|`string`|9||must exist in xx_nhr20|
-|StockOwnerCode|cna50_owner|`string`|50||must exist in xx_chr20|
+|StockOwnerCode|cna50_vendor|`string`|50||must exist in xx_chr20|
 |ReleaseState|cna50_siemenrel|`number`||||
 |CurrentStatus|cna50_siemenstatus|`number`||||
 |PrivilegeLevel|cna50_priv|`number`|||0-9|
@@ -1355,7 +1355,7 @@ Document summary information including properties specific to integration requir
     + PropertyValue (optional, string, `abc`)
 
 + Response 200 (application/json)
-    + Attributes (array [TransactionHeader])
+    + Attributes (array [TransactionHeader List])
 
 + Response 400 (application/json)
     + Attributes (400 Response)
@@ -2772,11 +2772,13 @@ The Transaction key is a five part key made up of the following values seperate 
 
 ## PhysicalTradeCommission (object)
 + ContractId: P00004.000 (string)
++ UniqueId: 1 (number)
 + AgentAccount  (AccountHeader)
 + AgentReference: AGFARM01.P (string)
 
 ## PhysicalTradeCommission List (object)
 + ContractId: P00004.000 (string)
++ UniqueId: 1 (number)
 + AgentAccountCode: abc123 (string)
 + AgentReference: AGFARM01.P (string)
 
@@ -2953,6 +2955,11 @@ The Transaction key is a five part key made up of the following values seperate 
 + countryCode: BRA (string)
 
 ## TransactionHeader (object)
++ DocumentReference: CN1600001 (required, string)
++ EDICode: 123abc (string)
++ InterfaceStatus: y (string)
+
+## TransactionHeader List (object)
 + DocumentReference: CN1600001 (required, string)
 + EDICode: 123abc (string)
 + InterfaceStatus: y (string)
