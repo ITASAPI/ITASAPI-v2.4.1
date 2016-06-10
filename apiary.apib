@@ -1558,6 +1558,8 @@ Data Objects and endpoints providing access to cash create, match and authorisat
 ## AuthoriseForPosting [/Finance/{TradingEntityId}/Cash/AuthoriseForPosting/{DocumentReference}]
 Authorise an entity to be added to the Posting process.
 ### Create AuthoriseForPosting [PUT]
+`New` in release 2.4
+
 <strong>URI Parameters</strong>
 
 
@@ -1596,6 +1598,8 @@ None.
 ## PayableManual [/Finance/{TradingEntityId}/Cash/PayableManual]
 Allows generic cash payments to be created between multiple accounts  
 ### Create PayableManual [POST]
+`New` in release 2.4
+
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
 |DocumentBody||`object`||see <a href="/#reference/data-object-definitions/documentdetails/documentdetails">Document Details</a> object|`required`|
@@ -1623,6 +1627,8 @@ Allows generic cash payments to be created between multiple accounts
 ## PayableOnAccount [/Finance/{TradingEntityId}/Cash/PayableOnAccount]
 Allows cash payments to be created on account of existing (posted) accounting documents (e.g. Purchase Invoices) 
 ### Create PayableOnAccount [POST]
+`New` in release 2.4
+
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
 |DocumentBody||`object`||see <a href="/#reference/data-object-definitions/documentdetails/documentdetails">Document Details</a> object|`required`|
@@ -1654,6 +1660,8 @@ Allows cash payments to be created on account of existing (posted) accounting do
 ## ReceivableManual [/Finance/{TradingEntityId}/Cash/ReceivableManual]
 Allows generic cash receipts to be created between multiple accounts  
 ### Create ReceivableManual [POST]
+`New` in release 2.4
+
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
 |DocumentBody||`object`||see <a href="/#reference/data-object-definitions/documentdetails/documentdetails">Document Details</a> object|`required`|
@@ -1682,6 +1690,8 @@ Allows generic cash receipts to be created between multiple accounts
 ## ReceivableOnAccount [/Finance/{TradingEntityId}/Cash/ReceivableOnAccount]
 Allows cash receipts to be created on account of existing (posted) accounting documents (e.g. Sales Invoices) 
 ### Create ReceivableOnAccount [POST]
+`New` in release 2.4
+
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
 |DocumentBody||`object`||see <a href="/#reference/data-object-definitions/documentdetails/documentdetails">Document Details</a> object|`required`|
