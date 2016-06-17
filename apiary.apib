@@ -1237,7 +1237,7 @@ Provides access to full accounting ledger by Document Reference.
     + DocumentReference (required, string, `P10000.000`)
 
 + Response 200 (application/json)
-    + Attributes (PostedTransaction)
+    + Attributes (array [PostedTransaction])
 
 + Response 400 (application/json)
     + Attributes (400 Response)
@@ -1287,7 +1287,7 @@ Provides access to financial transaction details yet to be posted to the ledgers
     + DocumentReference (required, string, `CN1600001`)
 
 + Response 200 (application/json)
-    + Attributes (UnPostedTransaction)
+    + Attributes (array [UnPostedTransaction])
 
 + Response 400 (application/json)
     + Attributes (400 Response)
