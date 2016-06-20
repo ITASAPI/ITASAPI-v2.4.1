@@ -80,7 +80,10 @@ Client Ledger Account profile
     + PropertyValue (optional, string, `O`) ... required if property specified
 
 + Response 200 (application/json)
-    + Attributes (array [ClientAccount List])
+    + Attributes (object)
+        + Data (array [ClientAccount List])
+        + Pagination (Pagination)
+        + Response (200 SuccessResponse)
     
 + Response 400 (application/json)
     + Attributes (400 BadPropertyResponse)
@@ -2367,6 +2370,7 @@ The Transaction key is a five part key made up of the following values seperate 
 
 ## 201 UpdateResponse (object)
 + Response: Updated (string)
+
 
 ## 400 Response (object)
 + Response: 400 Bad Request (string)
