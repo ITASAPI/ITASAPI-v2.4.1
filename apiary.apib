@@ -1028,6 +1028,7 @@ List of charter profiles – restricted by WIPAccountType of `C`.
 + Response 200 (application/json)
     + Attributes (object)
         + Data (array [Charter List])
+        + Pagination (Pagination)
 
     
 + Response 400 (application/json)
@@ -2725,6 +2726,12 @@ The Transaction key is a five part key made up of the following values seperate 
 + PacingTypeDescription: In bags of 1050 kgs net (string)
 + EDICode: ext12345678 (string) 
 + Status: F (string)
+
+## Pagination (object)
++ Total: 547 (number) - total number of records available
++ Top: 200 (number) - max number returned per message 
++ Skip: 400 (number) - number of records skipped
++ Returned: 146 (number) - actual number returned
 
 ## PayableReceivableManual (object)
 + DocumentBody (required, DocumentDetails)
