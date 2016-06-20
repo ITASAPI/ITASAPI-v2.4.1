@@ -142,7 +142,7 @@ Client Ledger Account profile.
 + Response 404 (application/json)
     + Attributes (404 Response)
 
-### Create ClientAccount [POST]
+### Create ClientAccount [PUT]
 For Update requests the field `ClientAccountId` is used to check the corresponding value in the URI.
 
 |property|description|type|max length|notes|constraint|
@@ -194,11 +194,14 @@ For Update requests the field `ClientAccountId` is used to check the correspondi
     + Attributes (ClientAccount CreateUpdate)
 
 + Parameters
-    + TradingEntityId (required, string) ... identify specific trading entity
-    + ClientAccountId (required, string) ... code for client account to create
+    + TradingEntityId (required, string) - identify specific trading entity
+    + ClientAccountId (required, string) - code for client account to create
 
 + Response 200 (application/json)
-    + Attributes (200 CreateResponse)
+    + Attributes 
+        + Data
+            + ClientAccountID: ABCDEF.P (string)
+        + Response (200 CreateResponse)
     
 + Response 400 (application/json)
     + Attributes (400 Response)
