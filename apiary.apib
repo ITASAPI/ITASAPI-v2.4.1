@@ -1275,7 +1275,10 @@ Provides access to full accounting ledger by Document Reference.
     + DocumentReference (required, string, `P10000.000`)
 
 + Response 200 (application/json)
-    + Attributes (array [PostedTransaction])
+    + Attributes 
+        + Data (array [PostedTransaction])
+        + Pagination (Pagination)
+        + Response (200 SuccessResponse)
 
 + Response 400 (application/json)
     + Attributes (400 Response)
@@ -1325,7 +1328,10 @@ Provides access to financial transaction details yet to be posted to the ledgers
     + DocumentReference (required, string, `CN1600001`)
 
 + Response 200 (application/json)
-    + Attributes (array [UnPostedTransaction])
+    + Attributes 
+        + Data (array [UnPostedTransaction])
+        + Pagination (Pagination)
+        + Response (200 SuccessResponse)
 
 + Response 400 (application/json)
     + Attributes (400 Response)
@@ -1360,7 +1366,9 @@ Document summary information including properties specific to integration requir
     + DocumentReference (required, string, `CN1600001`)
 
 + Response 201 (application/json)
-    + Attributes (201 UpdateResponse)
+    + Attributes 
+        + Data (201 UpdateResponse)
+        + Response (200 SuccessResponse)
 
 + Response 400 (application/json)
     + Attributes (400 Response)
@@ -1393,7 +1401,10 @@ Document summary information including properties specific to integration requir
     + PropertyValue (optional, string, `abc`)
 
 + Response 200 (application/json)
-    + Attributes (array [TransactionHeader List])
+    + Attributes 
+        + Data (array [TransactionHeader List])
+        + Pagination (Pagination)
+        + Response (200 SuccessResponse)
 
 + Response 400 (application/json)
     + Attributes (400 Response)
@@ -1439,7 +1450,9 @@ Principle Physical Contract (agreement) details
     + ContractId (required, string, `P40000.000`)
 
 + Response 200 (application/json)
-    + Attributes (PhysicalTrade)
+    + Attributes 
+        + Data (PhysicalTrade)
+        + Response (200 SuccessResponse)
 
 + Response 400 (application/json)
     + Attributes (400 Response)
@@ -1491,7 +1504,10 @@ List of Principle Physical Contracts (agreements)
     + PropertyValue (optional, string, `P40000.000`)
 
 + Response 200 (application/json)
-    + Attributes (array [PhysicalTrade List])
+    + Attributes 
+        + Data (array [PhysicalTrade List])
+        + Pagination (Pagination)
+        + Response (200 SuccessResponse)
 
 + Response 400 (application/json)
     + Attributes (400 Response)
@@ -1518,7 +1534,9 @@ Broker commissions held against Physical Contracts.
     + ContractId (required, string, `P40000.000`)
 
 + Response 200 (application/json)
-    + Attributes (PhysicalTradeCommission)
+    + Attributes 
+        + Data (PhysicalTradeCommission)
+        + Response (200 SuccessResponse)
 
 + Response 400 (application/json)
     + Attributes (400 Response)
@@ -1549,7 +1567,10 @@ List of Broker commissions held against Physical Contracts.
     + PropertyValue (optional, string, `abc`)
 
 + Response 200 (application/json)
-    + Attributes (array [PhysicalTradeCommission List])
+    + Attributes 
+        + Data (array [PhysicalTradeCommission List])
+        + Pagination (Pagination)
+        + Response (200 SuccessResponse)
 
 + Response 400 (application/json)
     + Attributes (400 Response)
@@ -1582,7 +1603,10 @@ List of Logistics information for Physical Contracts.
     + PropertyValue (optional, string, `abc`)
 
 + Response 200 (application/json)
-    + Attributes (array [PhysicalTradeShipment List])
+    + Attributes 
+        + Data (array [PhysicalTradeShipment List])
+        + Pagination (Pagination)
+        + Response (200 SuccessResponse)
 
 + Response 400 (application/json)
     + Attributes (400 Response)
