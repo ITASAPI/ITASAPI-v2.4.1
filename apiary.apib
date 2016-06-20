@@ -2367,7 +2367,6 @@ The Transaction key is a five part key made up of the following values seperate 
 
 ## 201 UpdateResponse (object)
 + Response: Updated (string)
-+ {PropertyKeyName}: {PropertyValue} (string)
 
 ## 400 Response (object)
 + Response: 400 Bad Request (string)
@@ -2385,13 +2384,14 @@ The Transaction key is a five part key made up of the following values seperate 
 + Severity: Error (string)
 + Message: `API5068 - API : The value sent in the querystring variable {Property} is not allowed.` (string)
 
-## 404 Response (object)
-+ Severity: Error (string)
-+ Response: 404 Object not found (string)
 
-## 404 ErrorMessageDetail (object)
+## 404 Response (object)
++ Response: Error (string)
++ Messages (array[404 ErrorMessageDetailMessage])
+
+## 404 ErrorMessageDetailMessage (object)
 + Severity: Error (string)
-+ ErrorMessage: `API5067 - API : The value {TradingEntityId} sent as the TradingEntitiyId does not exist.` (string)
++ Message: `API5067 - API : The value {TradingEntityId} sent as the TradingEntitiyId does not exist.` (string)
 
 
 ## accessToken (object)
