@@ -1825,7 +1825,9 @@ Orders (CallOffs) specifically representing incoming goods.
     + ReleaseId (required, number, `123`)
 
 + Response 200 (application/json)
-    + Attributes (DeliveryInOrder)
+    + Attributes 
+        + Data (DeliveryInOrder)
+        + Response (200 SuccessResponse)
 
 + Response 400 (application/json)
     + Attributes (400 Response)
@@ -1853,7 +1855,9 @@ Orders (CallOffs) specifically representing outgoing goods.
     + ReleaseId (required, number, `123`)
 
 + Response 200 (application/json)
-    + Attributes (DeliveryOutOrder)
+    + Attributes 
+        + Data (DeliveryOutOrder)
+        + Response (200 SuccessResponse)
 
 + Response 404 (application/json)
     + Attributes (404 Response)
@@ -1905,7 +1909,9 @@ Orders (CallOffs) generated through EXPED
     + ReleaseId (required, string, `abc123`)
 
 + Response 200 (application/json)
-    + Attributes (ExpedCallOff)
+    + Attributes 
+        + Data (ExpedCallOff)
+        + Response (200 SuccessResponse)
 
 + Response 404 (application/json)
     + Attributes (404 Response)
@@ -1961,7 +1967,10 @@ Orders (CallOffs) generated through EXPED
     + PropertyValue (optional, string, `abc123`) ... required if property specified.
 
 + Response 200 (application/json)
-    + Attributes (ExpedCallOff List)
+    + Attributes 
+        + Data (ExpedCallOff List)
+        + Pagination (Pagination)
+        + Response (200 SuccessResponse)
 
 + Response 400 (application/json)
     + Attributes (400 BadPropertyResponse)
@@ -1996,7 +2005,10 @@ Orders specifically representing movements of goods between Stock Units (aka Man
    + Attributes (StockMovement Flat)
 
 + Response 200 (application/json)
-    + Attributes (200 CreateResponse)
+    + Attributes 
+        + Data (StockToStockOrder)
+        + Pagination (Pagination)
+        + Response (200 SuccessResponse)
 
 + Response 400 (application/json)
     + Attributes (400 Response)
