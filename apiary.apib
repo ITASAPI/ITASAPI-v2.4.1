@@ -1029,6 +1029,7 @@ List of charter profiles – restricted by WIPAccountType of `C`.
     + Attributes (object)
         + Data (array [Charter List])
         + Pagination (Pagination)
+        + Response (200 SuccessResponse)
 
     
 + Response 400 (application/json)
@@ -2358,9 +2359,13 @@ The Transaction key is a five part key made up of the following values seperate 
 
 # Data Structures
 
+## 200 SuccessResponse (object)
++ Response
+    + Value: Success (string)
+
 ## 200 CreateResponse (object)
-+ Response: Created (string)
-+ {PropertyKeyName}: {PropertyValue} (string)
++ Response
+    + Value: Created (string)
 
 ## 201 UpdateResponse (object)
 + Response: Updated (string)
