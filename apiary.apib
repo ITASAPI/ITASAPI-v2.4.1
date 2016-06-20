@@ -2360,12 +2360,10 @@ The Transaction key is a five part key made up of the following values seperate 
 # Data Structures
 
 ## 200 SuccessResponse (object)
-+ Response
-    + Value: Success (string)
++ Value: Success (string)
 
 ## 200 CreateResponse (object)
-+ Response
-    + Value: Created (string)
++ Value: Created (string)
 
 ## 201 UpdateResponse (object)
 + Response: Updated (string)
@@ -2373,23 +2371,26 @@ The Transaction key is a five part key made up of the following values seperate 
 
 ## 400 Response (object)
 + Response: 400 Bad Request (string)
-+ Errors (array[400 ErrorMessageDetail])
++ Messages (array[400 ErrorMessageDetail])
 
 ## 400 BadPropertyResponse (object)
 + Response: 400 Bad Request (string)
-+ Errors (array[400 BadPropertyErrorMessageDetail])
++ Messages (array[400 BadPropertyErrorMessageDetail])
 
 ## 400 ErrorMessageDetail (object)
-+ ErrorMessage: `API5058 - Data : The mandatory field {fieldName} was missing in the request body.` (string)
++ Severity: Error (string)
++ Message: `API5058 - Data : The mandatory field {fieldName} was missing in the request body.` (string)
 
 ## 400 BadPropertyErrorMessageDetail (object)
-+ ErrorMessage: `API5068 - API : The value sent in the querystring variable {Property} is not allowed.` (string)
++ Severity: Error (string)
++ Message: `API5068 - API : The value sent in the querystring variable {Property} is not allowed.` (string)
 
 ## 404 Response (object)
++ Severity: Error (string)
 + Response: 404 Object not found (string)
-+ Errors (array[404 ErrorMessageDetail])
 
 ## 404 ErrorMessageDetail (object)
++ Severity: Error (string)
 + ErrorMessage: `API5067 - API : The value {TradingEntityId} sent as the TradingEntitiyId does not exist.` (string)
 
 
