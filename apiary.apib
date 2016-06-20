@@ -2039,7 +2039,9 @@ Batch record information by Stock Unit.
     + StockBatchId (required, string, `abc123`)
 
 + Response 200 (application/json)
-    + Attributes (StockBatch)
+    + Attributes 
+        + Data (StockBatch)
+        + Response (200 SuccessResponse)
 
 + Response 400 (application/json)
     + Attributes (400 Response)
@@ -2071,7 +2073,10 @@ Batch record information by Stock Unit.
     + PropertyValue (optional, string, `abc123`) ... required if property specified.
 
 + Response 200 (application/json)
-    + Attributes (StockBatch List)
+    + Attributes 
+        + Data (StockBatch List)
+        + Pagination (Pagination)
+        + Response (200 SuccessResponse)
 
 + Response 400 (application/json)
     + Attributes (400 BadPropertyResponse)
@@ -2114,7 +2119,10 @@ None.
     + ReleaseId (required, number, `123`)
 
 + Response 200 (application/json)
-    + Attributes (200 CreateResponse)
+    + Attributes 
+        + Data
+            + ReleaseId: 123 (number)
+        + Response (200 UpdateResponse)
 
 + Response 400 (application/json)
     + Attributes (400 Response)
@@ -2140,7 +2148,9 @@ Information specific to the source of the goods generated during any movement (D
     + ReleaseId (required, number, `123`)
 
 + Response 200 (application/json)
-    + Attributes (StockLoading)
+    + Attributes 
+        + Data (array [StockLoading])
+        + Response (200 SuccessResponse)
     
 + Response 400 (application/json)
     + Attributes (400 Response)
@@ -2148,7 +2158,7 @@ Information specific to the source of the goods generated during any movement (D
 + Response 404 (application/json)
     + Attributes (404 Response)
 
-### Create StockLoading [POST]
+### Create/Update StockLoading [PUT]
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -2168,7 +2178,11 @@ Information specific to the source of the goods generated during any movement (D
     + Attributes (array [StockLoadingFlat])
 
 + Response 200 (application/json)
-    + Attributes (200 CreateResponse)
+    + Attributes 
+        + Attributes 
+        + Data
+            + ReleaseId: 123 (number)
+        + Response (200 CreateResponse)
 
 + Response 400 (application/json)
     + Attributes (400 Response)
@@ -2176,34 +2190,6 @@ Information specific to the source of the goods generated during any movement (D
 + Response 404 (application/json)
     + Attributes (404 Response)
 
-### Update StockLoading [PUT]
-Please note that sending an update will remove any current records for the TradingEntity/ReleaseNr combination and replace them with records sent.
-
-|property|description|type|max length|notes|constraint|
-|--------|-----------|----|----------|-----|----------|
-|ReleaseId|phys10_releasenr|`number`||required|Unique Key|
-|SourceStockUnitCode|phys10_tank|`string`|11|required|must exist in xx_cna50|
-|Weight|phys10_qty|`number`||required||
-
-+ Parameters
-    + TradingEntityId (required, string, `AB`) 
-    + ReleaseId (required, number, `123`)
-
-+ Request (application/json)
-    + Header
-
-            AccessToken: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
-
-    + Attributes (array [StockLoadingFlat])
-
-+ Response 201 (application/json)
-    + Attributes (201 UpdateResponse)
-
-+ Response 400 (application/json)
-    + Attributes (400 Response)
-
-+ Response 404 (application/json)
-    + Attributes (404 Response)
 
 ## StockMovement [/Inventory/{TradingEntityId}/Physicals/OrderProcessing/StockMovement/{ReleaseId}]
 Information relating to the processing of the Order. 
@@ -2243,7 +2229,9 @@ Information relating to the processing of the Order.
             AccessToken: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
 
 + Response 200 (application/json)
-    + Attributes (StockMovement)
+    + Attributes 
+        + Data (StockMovement)
+        + Response (200 SuccessResponse)
 
 + Response 400 (application/json)
     + Attributes (400 Response)
@@ -2290,7 +2278,10 @@ Information relating to the processing of the Order.
    + Attributes (StockMovement Flat)
 
 + Response 201 (application/json)
-    + Attributes (201 UpdateResponse)
+    + Attributes  
+        + Data (201 UpdateResponse)
+            + ReleaseId: 123 (number)
+        + Response (200 CreateResponse)
 
 + Response 400 (application/json)
     + Attributes (400 Response)
