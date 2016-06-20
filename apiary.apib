@@ -295,11 +295,15 @@ User-defined list of codes used for classification purposes on Client Account pr
     + PropertyValue (optional, string, `H`) ... required if property specified 
 
 + Response 200 (application/json)
-    + Attributes (array [ClientType List])
+    + Attributes 
+        + Data (array [ClientType List])
+        + Response (200 SuccessResponse)
+
+
     
 + Response 400 (application/json)
     + Attributes (400 BadPropertyResponse)
-    
+  
 + Response 404 (application/json)
     + Attributes (404 Response)
 
