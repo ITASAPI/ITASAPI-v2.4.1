@@ -1684,7 +1684,10 @@ Allows generic cash payments to be created between multiple accounts
     + Attributes (PayableReceivableManual)
 
 + Response 200 (application/json)
-    + Attributes (200 CreateResponse)
+    + Attributes 
+        + Data
+            + DocumentReference: abc123 (string)
+        + Response (200 CreateResponse)
 
 + Response 400 (application/json)
     + Attributes (400 Response)
@@ -1716,7 +1719,10 @@ Allows cash payments to be created on account of existing (posted) accounting do
     + Attributes (PayableReceivableOnAccount)
 
 + Response 200 (application/json)
-    + Attributes (200 CreateResponse)
+    + Attributes 
+        + Data
+            + DocumentReference: abc123 (string)
+        + Response (200 CreateResponse)
 
 + Response 400 (application/json)
     + Attributes (400 Response)
@@ -1746,7 +1752,10 @@ Allows generic cash receipts to be created between multiple accounts
     + Attributes (PayableReceivableManual)
 
 + Response 200 (application/json)
-    + Attributes (200 CreateResponse)
+    + Attributes 
+        + Data
+            + DocumentReference: abc123 (string)
+        + Response (200 CreateResponse)
 
 + Response 400 (application/json)
     + Attributes (400 Response)
@@ -1779,7 +1788,10 @@ Allows cash receipts to be created on account of existing (posted) accounting do
     + Attributes (PayableReceivableOnAccount)
 
 + Response 200 (application/json)
-    + Attributes (200 CreateResponse)
+    + Attributes 
+        + Data
+            + DocumentReference: abc123 (string)
+        + Response (200 CreateResponse)
 
 + Response 400 (application/json)
     + Attributes (400 Response)
