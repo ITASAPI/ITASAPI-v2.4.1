@@ -629,7 +629,7 @@ Codes and rates applied as part of any VAT/GST accounting practise.
 
 
 # Group Physicals Reference Data
-Codes relating to Physicals Trading and related endpoints
+Codes relating to Physicals Trading and related endpoints.
 
 ## Commodity List [/ReferenceData/{TradingEntityId}/Physicals/Commodity/{Property}/{PropertyValue}]
 Commodity/Product codes, used to identify goods
@@ -1005,7 +1005,9 @@ Charter profile – restricted by WIPAccountType of `C`.
     + CharterId (required, string, `CHART01.000`)
 
 + Response 200 (application/json)
-    + Attributes (Charter)
+    + Attributes 
+        + Data (Charter)
+        + Response (200 SuccessResponse)
 
 + Response 400 (application/json)
     + Attributes (400 Response)
@@ -1089,7 +1091,9 @@ Stock Account profile - restricted by WIPAccountType of `S`.
     + StockUnitId (required, string, `5100.MEP`)
 
 + Response 200 (application/json)
-    + Attributes (StockUnit)
+    + Attributes 
+        + Data (StockUnit)
+        + Response (200 SuccessResponse)
 
 + Response 400 (application/json)
     + Attributes (400 Response)
@@ -1131,7 +1135,10 @@ Stock Account profile – restricted by WIPAccountType of `S`.
     + PropertyValue (optional, string, `abc`) ... required if property specified.
 
 + Response 200 (application/json)
-    + Attributes (array [StockUnitList])
+    + Attributes
+        + Data (array [StockUnitList])
+        + Pagination (Pagination)
+        + Response (200 SuccessResponse)
     
 + Response 400 (application/json)
     + Attributes (400 BadPropertyResponse)
@@ -1166,7 +1173,9 @@ Charter profile
     + WipAccountId (required, string, `5100.MEP`)
 
 + Response 200 (application/json)
-    + Attributes (WIPAccount)
+    + Attributes 
+        + Data (WIPAccount)
+        + Response (200 SuccessResponse)
 
 + Response 400 (application/json)
     + Attributes (400 Response)
@@ -1207,7 +1216,10 @@ List of charter profiles.
     + PropertyValue (optional, string, `abc`) ... required if property specified.
 
 + Response 200 (application/json)
-    + Attributes (array[WIPAccount List])
+    + Attributes 
+        + Data (array[WIPAccount List])
+        + Pagination (Pagination)
+        + Response (200 SuccessResponse)
     
 + Response 400 (application/json)
     + Attributes (400 BadPropertyResponse)
