@@ -1649,8 +1649,12 @@ None.
                 none
             }
 
-+ Response 200 (application/json)
-    + Attributes (200 CreateResponse)
+
+ + Response 200 (application/json)
+    + Attributes 
+        + Data
+            + DocumentReference: abc123 (string)
+        + Response (200 AuthoriseResponse)
 
 + Response 400 (application/json)
     + Attributes (400 Response)
@@ -2423,6 +2427,9 @@ The Transaction key is a five part key made up of the following values seperate 
 
 ## 200 CreateResponse (object)
 + Value: Created (string)
+
+## 200 AuthoriseResponse (object)
++ Value: Authorised (string)
 
 ## 201 UpdateResponse (object)
 + Value: Updated (string)
