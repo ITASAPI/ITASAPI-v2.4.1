@@ -329,7 +329,10 @@ Country codes.
     + PropertyValue (optional, string, `UK`)
 
 + Response 200 (application/json)
-    + Attributes (array [Country])
+    + Attributes 
+        + Data (array [Country])
+        + Response (200 SuccessResponse)
+    
 
 + Response 400 (application/json)
     + Attributes (400 BadPropertyResponse)
@@ -355,7 +358,9 @@ Currency codes.
     + PropertyValue (optional, string, `UK`)
 
 + Response 200 (application/json)
-    + Attributes (array [Currency])
+    + Attributes 
+        + Data (array [Currency])
+        + Response (200 SuccessResponse)
 
 + Response 400 (application/json)
     + Attributes (400 BadPropertyResponse)
@@ -387,7 +392,9 @@ ITAS User Account profiles.
     + PropertyValue (optional, string, `JSMITH`)
 
 + Response 200 (application/json)
-    + Attributes (array [UserAccount])
+    + Attributes 
+        + Data (array [UserAccount])
+        + Response (200 SuccessResponse)
 
 + Response 400 (application/json)
     + Attributes (400 BadPropertyResponse)
@@ -426,8 +433,10 @@ Codes used to segregate business sectors within a trading company, and can be ap
 
 
 + Response 200 (application/json)
-    + Attributes (array[Department List])
-    
+    + Attributes 
+        + Data (array[Department List])
+        + Response (200 SuccessResponse)
+
 + Response 400 (application/json)
     + Attributes (400 BadPropertyResponse)
     
@@ -454,7 +463,10 @@ Codes used to segregate business sectors within a trading company, and can be ap
     + DepartmentId (required, string, `5100`) ...  property department id 
 
 + Response 200 (application/json)
-    + Attributes (Department)
+    + Attributes 
+        + Data (Department)
+        + Response (200 SuccessResponse)
+
 
 + Response 400 (application/json)
     + Attributes (400 Response)
@@ -488,7 +500,9 @@ Codes that are primarily used for accounting transaction analysis purposes.
     + PropertyValue (optional, string, `F`) 
 
 + Response 200 (application/json)
-    + Attributes (array [Expense List])
+    + Attributes 
+    + Data (array [Expense List])
+        + Response (200 SuccessResponse)
 
 + Response 400 (application/json)
     + Attributes (400 Response)
@@ -525,7 +539,10 @@ Nominal (General) Ledger Account profile.
 
 
 + Response 200 (application/json)
-    + Attributes (array[NominalAccount])
+    + Attributes 
+    + Data (array[NominalAccount])
+        + Response (200 SuccessResponse)
+
 
 + Response 404 (application/json)
     + Attributes (404 Response)
@@ -552,7 +569,10 @@ Nominal (General) Ledger Account profile.
 
 
 + Response 200 (application/json)
-    + Attributes (NominalAccount)
+    + Attributes 
+        + Data (NominalAccount)
+        + Response (200 SuccessResponse)
+
 
 + Response 404 (application/json)
     + Attributes (404 Response)
@@ -575,7 +595,10 @@ Nominal (General) Ledger Account profile.
     + Attributes (NominalAccount)
 
 + Response 200 (application/json)
-    + Attributes (200 CreateResponse)
+    + Attributes 
+        + Data (200 CreateResponse)
+        + Response (200 SuccessResponse)
+
 
 + Response 400 (application/json)
     + Attributes (400 Response)
@@ -606,7 +629,10 @@ User-defined categorisation codes that can be applied to departments and bank ac
 
 
 + Response 200 (application/json)
-    + Attributes (array[NominalCatagory])
+    + Attributes 
+        + Data (array[NominalCatagory])
+        + Response (200 SuccessResponse)
+
 
 + Response 400 (application/json)
     + Attributes (400 Response)
@@ -639,7 +665,10 @@ Codes and rates applied as part of any VAT/GST accounting practise.
     + PropertyValue (optional, string, `AF`) 
 
 + Response 200 (application/json)
-    + Attributes (array [VATRate])
+    + Attributes 
+        + Data (array [VATRate])
+        + Response (200 SuccessResponse)
+
 
 + Response 400 (application/json)
     + Attributes (400 BadPropertyResponse)
