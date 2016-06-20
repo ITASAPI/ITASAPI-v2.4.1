@@ -142,6 +142,8 @@ Client Ledger Account profile.
 + Response 404 (application/json)
     + Attributes (404 Response)
 
+
+
 ### Create/Update ClientAccount [PUT]
 For Update requests the field `ClientAccountId` is used to check the corresponding value in the URI.
 
@@ -202,6 +204,12 @@ For Update requests the field `ClientAccountId` is used to check the correspondi
         + Data
             + ClientAccountID: ABCDEF.P (string)
         + Response (200 CreateResponse)
+
++ Response 201 (application/json)
+    + Attributes 
+        + Data
+            + ClientAccountID: ABCDEF.P (string)
+        + Response (200 UpdateResponse)
     
 + Response 400 (application/json)
     + Attributes (400 Response)
@@ -541,13 +549,7 @@ Nominal (General) Ledger Account profile.
     + Attributes 
         + Data
             + NominalAccountId: 1234.5678 (string)
-        + Response (200 CreateResponse)
-        
-+ Response 201 (application/json)
-    + Attributes 
-        + Data
-            + NominalAccountId: 1234.5678 (string)
-        + Response (201 UpdateResponse)
+        + Response (200 UpdateResponse)
 
 + Response 400 (application/json)
     + Attributes (400 Response)
