@@ -2380,7 +2380,9 @@ The Transaction key is a five part key made up of the following values seperate 
 ## 400 Response (object)
 + Response
     + Value: 400 Bad Request (string)
-+ Messages (array[400 ErrorMessageDetail])
++ Messages 
+    + 400 ErrorMessageDetail
+    + 400 Error WaringDetail
 
 ## 400 BadPropertyResponse (object)
 + Response
@@ -2390,6 +2392,14 @@ The Transaction key is a five part key made up of the following values seperate 
 ## 400 ErrorMessageDetail (object)
 + Severity: Error (string)
 + Message: `API5058 - Data : The mandatory field {fieldName} was missing in the request body.` (string)
+
+## 400 WarningMessageDetail (object)
++ Severity: Warning (string)
++ Message: `API50xx - Data : The field {fieldName} was not found.` (string)
+
+## 400 InfoMessageDetail (object)
++ Severity: Information (string)
++ Message: `API50xx - Data : Now create xyz.` (string)
 
 ## 400 BadPropertyErrorMessageDetail (object)
 + Severity: Error (string)
