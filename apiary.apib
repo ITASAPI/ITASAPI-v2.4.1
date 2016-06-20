@@ -723,7 +723,10 @@ Commodity/Product codes, used to identify goods.
     + PropertyValue (optional, string, `O`) ... required if property specified.
 
 + Response 200 (application/json)
-    + Attributes (array[Commodity])
+    + Attributes 
+        + Data (array[Commodity])
+        + Pagination (Pagination)
+        + Response (200 SuccessResponse)
     
 + Response 400 (application/json)
     + Attributes (400 BadPropertyResponse)
@@ -757,7 +760,10 @@ Contract Terms (aka Incoterms) usually setup to represent pre-defined, internati
     + PropertyValue (optional, string, `O`)
 
 + Response 200 (application/json)
-    + Attributes (array[ContractTerm])
+    + Attributes
+        + Data (array[ContractTerm])
+        + Pagination (Pagination)
+        + Response (200 SuccessResponse)
     
 + Response 400 (application/json)
     + Attributes (400 BadPropertyResponse)
@@ -789,7 +795,10 @@ Codes used to describe the units of packing applied in physical contracts.
     + PropertyValue (optional, string, `O`) ... required if property specified.
 
 + Response 200 (application/json)
-    + Attributes (array[PackingType])
+    + Attributes 
+        + Data (array[PackingType])
+        + Pagination (Pagination)
+        + Response (200 SuccessResponse)
     
 + Response 400 (application/json)
     + Attributes (400 BadPropertyResponse)
@@ -821,7 +830,10 @@ Codes used to describe terms of payment applied to physical contracts through to
     + PropertyValue (optional, string, `O`) ... required if property specified.
 
 + Response 200 (application/json)
-    + Attributes (array[PaymentTerm])
+    + Attributes 
+        + Data (array[PaymentTerm])
+        + Pagination (Pagination)
+        + Response (200 SuccessResponse)
     
 + Response 400 (application/json)
     + Attributes (400 BadPropertyResponse)
@@ -845,7 +857,10 @@ Codes used to identify physical port locations.
     [AccessToken][]
 
 + Response 200 (application/json)
-    + Attributes (array [Port List])
+    + Attributes 
+        + Data (array [Port List])
+        + Pagination (Pagination)
+        + Response (200 SuccessResponse)
     
 + Response 400 (application/json)
     + Attributes (400 BadPropertyResponse)
@@ -876,7 +891,10 @@ Codes used to identify specific product qualities.
     + PropertyValue (optional, string, `abc123`) ... required if property specified.
 
 + Response 200 (application/json)
-    + Attributes (array[Sample])
+    + Attributes 
+        + Data (array[Sample])
+        + Pagination (Pagination)
+        + Response (200 SuccessResponse)
 
 + Response 400 (application/json)
     + Attributes (400 BadPropertyResponse)
@@ -904,7 +922,10 @@ Codes used to classify the status in terms of movement, useful for reporting pur
     + PropertyValue (optional, string, `OR`) ... required if property specified.
 
 + Response 200 (application/json)
-    + Attributes (array[ShippingStatus])
+    + Attributes 
+        + Data (array[ShippingStatus])
+        + Pagination (Pagination)
+        + Response (200 SuccessResponse)
 
 + Response 400 (application/json)
     + Attributes (400 BadPropertyResponse)
@@ -934,7 +955,10 @@ Codes used to identify specific terminal location, useful for reporting purposes
     + PropertyValue (optional, string, `O`) ... required if property specified.
 
 + Response 200 (application/json)
-    + Attributes (array[Terminal])
+    + Attributes 
+        + Data (array[Terminal])
+        + Pagination (Pagination)
+        + Response (200 SuccessResponse)
 
 + Response 400 (application/json)
     + Attributes (400 BadPropertyResponse)
@@ -956,7 +980,10 @@ List of Vessel names that can be applied as part of any physical logistics strat
     [AccessToken][]
 
 + Response 200 (application/json)
-    + Attributes (array [Vessel List])
+    + Attributes 
+        + Data (array [Vessel List])
+        + Pagination (Pagination)
+        + Response (200 SuccessResponse)
     
 + Response 400 (application/json)
     + Attributes (400 BadPropertyResponse)
@@ -991,7 +1018,10 @@ Codes used to describe the units of measurement applied in physical contracts.
     + PropertyValue (optional, string, `abc123`) ... required if property specified.
 
 + Response 200 (application/json)
-    + Attributes (array[Weight])
+    + Attributes 
+        + Data (array[Weight])
+        + Pagination (Pagination)
+        + Response (200 SuccessResponse)
     
 + Response 400 (application/json)
     + Attributes (400 BadPropertyResponse)
