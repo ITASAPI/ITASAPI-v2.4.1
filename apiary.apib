@@ -1026,7 +1026,7 @@ List of charter profiles – restricted by WIPAccountType of `C`.
     + PropertyValue (optional, string, `abc`) ... required if property specified.
 
 + Response 200 (application/json)
-    + Attributes (array [Charter List])
+    + Attributes (Charter List)
     
 + Response 400 (application/json)
     + Attributes (400 BadPropertyResponse)
@@ -2439,7 +2439,7 @@ The Transaction key is a five part key made up of the following values seperate 
 
 
 ## Charter List (object)
-+ Data
++ Data (
     + CharterId: CHART01.000 (required, string)
     + CharterDescription: `NILEDUTCH SHANGHAI  V096W`(string)
     + DepartmentCode: 5110 (string)
@@ -2451,6 +2451,7 @@ The Transaction key is a five part key made up of the following values seperate 
     + PrivilegeLevel: 5 (number)
     + EDICode: xyz321 (string)
     + Status: F (string)
+    )
 
 ## ClientAccount (object)
 + ClientAccountId: ABCDEF.P (string) 
