@@ -297,6 +297,7 @@ User-defined list of codes used for classification purposes on Client Account pr
 + Response 200 (application/json)
     + Attributes 
         + Data (array [ClientType List])
+        + Pagination (Pagination)
         + Response (200 SuccessResponse)
 
 
@@ -331,6 +332,7 @@ Country codes.
 + Response 200 (application/json)
     + Attributes 
         + Data (array [Country])
+        + Pagination (Pagination)
         + Response (200 SuccessResponse)
     
 
@@ -360,6 +362,7 @@ Currency codes.
 + Response 200 (application/json)
     + Attributes 
         + Data (array [Currency])
+        + Pagination (Pagination)
         + Response (200 SuccessResponse)
 
 + Response 400 (application/json)
@@ -394,6 +397,7 @@ ITAS User Account profiles.
 + Response 200 (application/json)
     + Attributes 
         + Data (array [UserAccount])
+        + Pagination (Pagination)
         + Response (200 SuccessResponse)
 
 + Response 400 (application/json)
@@ -435,6 +439,7 @@ Codes used to segregate business sectors within a trading company, and can be ap
 + Response 200 (application/json)
     + Attributes 
         + Data (array[Department List])
+        + Pagination (Pagination)
         + Response (200 SuccessResponse)
 
 + Response 400 (application/json)
@@ -501,7 +506,8 @@ Codes that are primarily used for accounting transaction analysis purposes.
 
 + Response 200 (application/json)
     + Attributes 
-    + Data (array [Expense List])
+        + Data (array [Expense List])
+        + Pagination (Pagination)
         + Response (200 SuccessResponse)
 
 + Response 400 (application/json)
@@ -540,7 +546,8 @@ Nominal (General) Ledger Account profile.
 
 + Response 200 (application/json)
     + Attributes 
-    + Data (array[NominalAccount])
+        + Data (array[NominalAccount])
+        + Pagination (Pagination)
         + Response (200 SuccessResponse)
 
 
@@ -596,9 +603,9 @@ Nominal (General) Ledger Account profile.
 
 + Response 200 (application/json)
     + Attributes 
-        + Data (200 CreateResponse)
-        + Response (200 SuccessResponse)
-
+        + Data
+            + NominalAccountId: 1234.5678 (string)
+        + Response (200 CreateResponse)
 
 + Response 400 (application/json)
     + Attributes (400 Response)
