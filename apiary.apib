@@ -3,6 +3,12 @@ HOST: http://itas.apiary.io/
 VERSION: 2.4.1
 
 # ITAS API 2.4.1
+
+## Disclaimer
+
+**** Warning: at this point, ITAS API does not support asynchronus calls for POST, PUT and PATCH requests. Async requests could result in various Error messages, or even a corruption of data in extreme cases and are therefore not supported. ****
+<br />
+<br />
 <strong>Release notes</strong> (13<sup>th</sup> June 2016)
 
 <div>~ New endpoints added in this release :</div>
@@ -145,7 +151,7 @@ Client Ledger Account profile.
 
 
 ### Create/Update ClientAccount [PUT]
-For Update requests the field `ClientAccountId` is used to check the corresponding value in the URI
+For Update requests the field `ClientAccountId` is used to check the corresponding value in the URI. * <a href="/#introduction/disclaimer"> (Disclaimer)</a>
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -529,6 +535,7 @@ Nominal (General) Ledger Account profile.
     + Attributes (404 Response)
     
 ### Update NominalAccount [PUT]
+* <a href="/#introduction/disclaimer"> (Disclaimer)</a>
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
 |NominalAccountId|nhr20_acc|`string`|9|required||
@@ -1342,7 +1349,7 @@ Provides access to financial transaction details yet to be posted to the ledgers
 
 
 ## Transaction Header [/Accounting/{TradingEntityId}/Transaction/TransactionHeader/{DocumentReference}]
-Document summary information including properties specific to integration requirements.
+Document summary information including properties specific to integration requirements. * <a href="/#introduction/disclaimer"> (Disclaimer)</a>
 ### Update Transaction Header [PUT]
 
 
@@ -1619,7 +1626,7 @@ List of Logistics information for Physical Contracts.
 Data Objects and endpoints providing access to cash create, match and authorisation functionality.
 
 ## AuthoriseForPosting [/Finance/{TradingEntityId}/Cash/AuthoriseForPosting/{DocumentReference}]
-Authorise an entity to be added to the Posting process.
+Authorise an entity to be added to the Posting process. * <a href="/#introduction/disclaimer"> (Disclaimer)</a>
 ### Create AuthoriseForPosting [PUT]
 `New` in release 2.4
 
@@ -1664,7 +1671,7 @@ None.
     + Attributes (404 Response)
 
 ## PayableManual [/Finance/{TradingEntityId}/Cash/PayableManual]
-Allows generic cash payments to be created between multiple accounts  
+Allows generic cash payments to be created between multiple accounts. * <a href="/#introduction/disclaimer"> (Disclaimer)</a>
 ### Create PayableManual [POST]
 `New` in release 2.4
 
@@ -1696,7 +1703,7 @@ Allows generic cash payments to be created between multiple accounts
     + Attributes (404 Response)
 
 ## PayableOnAccount [/Finance/{TradingEntityId}/Cash/PayableOnAccount]
-Allows cash payments to be created on account of existing (posted) accounting documents (e.g. Purchase Invoices) 
+Allows cash payments to be created on account of existing (posted) accounting documents (e.g. Purchase Invoices). * <a href="/#introduction/disclaimer"> (Disclaimer)</a>
 ### Create PayableOnAccount [POST]
 `New` in release 2.4
 
@@ -1732,7 +1739,7 @@ Allows cash payments to be created on account of existing (posted) accounting do
 
 
 ## ReceivableManual [/Finance/{TradingEntityId}/Cash/ReceivableManual]
-Allows generic cash receipts to be created between multiple accounts  
+Allows generic cash receipts to be created between multiple accounts. * <a href="/#introduction/disclaimer"> (Disclaimer)</a>
 ### Create ReceivableManual [POST]
 `New` in release 2.4
 
@@ -1765,7 +1772,7 @@ Allows generic cash receipts to be created between multiple accounts
 
 
 ## ReceivableOnAccount [/Finance/{TradingEntityId}/Cash/ReceivableOnAccount]
-Allows cash receipts to be created on account of existing (posted) accounting documents (e.g. Sales Invoices) 
+Allows cash receipts to be created on account of existing (posted) accounting documents (e.g. Sales Invoices). * <a href="/#introduction/disclaimer"> (Disclaimer)</a>
 ### Create ReceivableOnAccount [POST]
 `New` in release 2.4
 
@@ -2089,7 +2096,7 @@ Batch record information by Stock Unit.
 Production Order processing services.
 
 ## MarkOrderAsProcessed [/Inventory/{TradingEntityId}/Physicals/OrderProcessing/MarkOrderAsProcessed/{ReleaseId}]
-Trigger call to complete an order (e.g. create stock journals etc)
+Trigger call to complete an order (e.g. create stock journals etc). * <a href="/#introduction/disclaimer"> (Disclaimer)</a>
 ### Update MarkOrderAsProcessed [PUT]
 `New` in release 2.4
 
@@ -2159,6 +2166,7 @@ Information specific to the source of the goods generated during any movement (D
     + Attributes (404 Response)
 
 ### Create/Update StockLoading [PUT]
+* <a href="/#introduction/disclaimer"> (Disclaimer)</a>
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -2240,6 +2248,7 @@ Information relating to the processing of the Order.
     + Attributes (404 Response)
 
 ### Update StockMovement [PUT]
+* <a href="/#introduction/disclaimer"> (Disclaimer)</a>
 
 |property|description|type|max length|notes|constraint|
 |--------|-----------|----|----------|-----|----------|
